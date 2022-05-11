@@ -10,20 +10,19 @@ function App() {
     let isLarge = true;
     return (
         <>
-            {/* <Router>
-                
-            </Router> */}
             <Router>
                 <Routes>
                     <Route path="/signup" element={<JoinNow />} />
                 </Routes>
-                <Header />
+
                 <Routes>
                     <Route
                         exact
                         path="/"
                         element={
                             <>
+                                <Header />
+
                                 <Label />
                                 <Row
                                     title="Netflix Trending"
@@ -63,7 +62,15 @@ function App() {
                     />
                 </Routes>
                 <Routes>
-                    <Route path="/movies/:id/:path" element={<MovieTitle />} />
+                    <Route
+                        path="/movies/:id/:path"
+                        element={
+                            <>
+                                <Header />
+                                <MovieTitle />
+                            </>
+                        }
+                    />
                 </Routes>
             </Router>
         </>
