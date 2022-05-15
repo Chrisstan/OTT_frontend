@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./movieTitle.css";
+import { type } from "@testing-library/user-event/dist/type";
 
 function MovieTitle() {
     const [movieData, setmovieData] = useState();
-    const { id, path } = useParams();
-    const base_Url = "https://image.tmdb.org/t/p/w500";
+    const { id, path, media} = useParams();
+    const base_Url = "https://res.cloudinary.com/zohoott/image/upload/v1652282662/ott";
 
     const data = async () => {
         const res = await axios
             .get(
-                `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`
+                `http://localhost:8080/movies/get_movie_by_id/${id}`
             )
             .then((res) => {
                 console.log("👉👉 >>", res.data);
@@ -26,13 +27,13 @@ function MovieTitle() {
         data();
     }, []);
 
-    const movieOrigin = () => {
-        return movieData?.production_countries[0].iso_3166_1;
-    };
+    // const movieOrigin = () => {
+    //     return movieData?.production_countries[0].iso_3166_1;
+    // };
     const movieRelease = () => {
         return (
-            movieData?.release_date.substr(0, 4) ||
-            movieData?.release_date.substr(0, 4)
+            movieData?.m_release_date.substr(0, 4) ||
+            movieData?.m_release_date.substr(0, 4)
         );
     };
     return (
@@ -42,25 +43,29 @@ function MovieTitle() {
                     <div className="boxGradient">
                         <div className="movieDetails">
                             <h1 className="movieTitle">
-                                {movieData?.original_title}
+                                {movieData?.movie_name}
                             </h1>
                             <div className="movieinfo">
-                                <h5 className="releaseYear">
+                                {<h5 className="releaseYear">
                                     {movieRelease()}
-                                </h5>
+                                </h5> }
                                 <span className="seperator"></span>
                                 <h5 className="voteCount">13+</h5>
                                 <span className="seperator"></span>
-                                <h5 className="origin">{movieOrigin()}</h5>
+                                {/* <h5 className="origin">{movieOrigin()}</h5> */}
                             </div>
                             <div className="movieDescription">
-                                <p className="description">
-                                    {movieData?.overview}
-                                </p>
+                                { <p className="description">
+                                    {movieData?.movie_description}
+                                </p> }
                             </div>
                         </div>
                         <div className="watchBtnContainer">
+                            {console.log("=======",media)};
+                        <Link to={`/movies/${media}`} className="vLink"> 
                             <button className="play btn">Play</button>
+                            {/* </video> */}
+                            </Link> 
                             <button className="myList btn">My List</button>
                         </div>
                     </div>
