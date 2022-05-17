@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./movieTitle.css";
-import { type } from "@testing-library/user-event/dist/type";
+import { Skeleton } from "@mui/material";
+import { padding } from "@mui/system";
 
 function MovieTitle() {
     const [movieData, setmovieData] = useState();
+    const [isLoading, setisLoading] = useState(false);
     const { id, path, media} = useParams();
     const base_Url = "https://res.cloudinary.com/zohoott/image/upload/v1652282662/ott";
 
@@ -15,6 +17,9 @@ function MovieTitle() {
                 `http://localhost:8080/movies/get_movie_by_id/${id}`
             )
             .then((res) => {
+                // setisLoading(false)
+
+        console.log("//////////", isLoading)
                 console.log("👉👉 >>", res.data);
                 setmovieData(res.data);
             })
@@ -24,12 +29,11 @@ function MovieTitle() {
     };
 
     useEffect(() => {
+        setisLoading(true)
         data();
     }, []);
 
-    // const movieOrigin = () => {
-    //     return movieData?.production_countries[0].iso_3166_1;
-    // };
+    console.log("////*",isLoading)
     const movieRelease = () => {
         return (
             movieData?.m_release_date.substr(0, 4) ||
@@ -55,18 +59,23 @@ function MovieTitle() {
                                 {/* <h5 className="origin">{movieOrigin()}</h5> */}
                             </div>
                             <div className="movieDescription">
-                                { <p className="description">
+                            { isLoading ? (
+                                 <p className="description">
                                     {movieData?.movie_description}
-                                </p> }
+                                </p> )
+                                :
+                                <Skeleton
+                                animation="pulse"
+                                sx={{ bgcolor: 'red' }}
+                                />
+                            }
                             </div>
                         </div>
                         <div className="watchBtnContainer">
                             {console.log("=======",media)};
                         <Link to={`/movies/${media}`} className="vLink"> 
                             <button className="play btn">Play</button>
-                            {/* </video> */}
                             </Link> 
-                            <button className="myList btn">My List</button>
                         </div>
                     </div>
                     <img

@@ -7,11 +7,7 @@ function Header() {
         <div className="nav">
             <div className="nav_black">
                 <div className="logoContainer">
-                    <img
-                        src={require("../../asserts/logo/logo.png")}
-                        alt=""
-                        className="nav_logo"
-                    ></img>
+                    <h2 className="logo"> STARNET+</h2>
                 </div>
                 <div className="btn_container">
                     <Link to="/signup">

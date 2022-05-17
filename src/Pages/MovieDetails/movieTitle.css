@@ -69,11 +69,11 @@
 .watchBtnContainer {
     display: flex;
     margin: 20px 20px;
-    width: 60%;
+    width: 50%;
     justify-content: space-around;
 }
 .btn {
-    width: 110px;
+    width: 190px;
     padding: 6px 8px;
     font-size: 22px;
     font-weight: bold;

@@ -24,6 +24,15 @@
   object-fit: contain;
 }
 
+.logo{
+  margin-left: 15;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  object-fit: contain;
+  color: #f40612;
+}
+
 .nav_logo {
   height: 70px;
 }
