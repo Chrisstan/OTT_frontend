@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .label_container {
   display: flex;
   flex-direction: column;
@@ -33,3 +34,40 @@
   font-weight: 400;
 
 }
+=======
+.label_container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 598px;
+  margin-left: 40px;
+  margin-top: 120px;
+}
+
+.label_title {
+  padding: 0;
+  color: #ffff;
+}
+
+.title {
+  padding: 0;
+  margin: 20px 0px 0px 0px;
+  line-height: 46px;
+  font-size: 44px;
+  font-weight: 800;
+}
+
+.label_content {
+  padding: 0;
+  color: #ffff;
+}
+
+.content {
+  font-size: 16px;
+  line-height: 25px;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+  font-weight: 400;
+
+}
+>>>>>>> 4c743cdd60f7a1ae3fad144730ba626abfbf33c9

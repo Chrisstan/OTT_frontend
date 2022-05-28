@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 input::-webkit-inner-spin-button,
 input::-webkit-inner-spin-button{
@@ -110,4 +111,118 @@ input::-webkit-inner-spin-button{
 .failure_msg{
     background: none;
     color: rgb(208, 69, 69);
+=======
+
+input::-webkit-inner-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.upload_container{
+    width: 90%;
+    margin-top: 1px;
+    gap: 30px;
+    border-radius: 15px;
+    background-color: #3939395d;
+    opacity: .8
+}
+
+.upload_title_container{
+    width: 100%;
+    /* padding: 5px; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.upload_title{
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(246, 246, 246);
+}
+.upload_form{
+    margin: 10%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.field{
+    margin: 20px 5px;
+    /* padding: 10px; */
+    /* margin-bottom: 0px; */
+    padding-left: 5px;
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.descp{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    
+}
+.input_lable{
+    width: fit-content;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    margin-right: 20px;
+    margin-left: 10px;
+    text-align: center;
+}
+.user_input{
+    width: 210px;
+    height: 25px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    background-color: transparent;
+}
+.desc{
+    width: 75%;
+}
+/* .id, .title,.name, .date{
+    order: 1;
+}
+.descp{
+    order: 3;
+}
+.popularity, 
+.budget, 
+.revenue, 
+.poster,
+.backdrop,
+.media{
+    order: 4;
+} */
+.update_btn{
+    display: flex;
+    flex-direction: column-reverse;
+    order: 6;
+    /* margin-left: 40%; */
+    /* margin-top: 20px; */
+    margin: 20px 40% ;
+}
+.msg{
+    display: flex;
+    flex-direction: column;
+}
+.failure_msg{
+    background: none;
+    color: rgb(208, 69, 69);
+>>>>>>> 4c743cdd60f7a1ae3fad144730ba626abfbf33c9
 }

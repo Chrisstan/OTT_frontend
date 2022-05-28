@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 .full_screen {
     height: 100%;
     position: absolute;
     left: 0;
     width: 100%;
     overflow: hidden;
+=======
+.full_screen {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+>>>>>>> 4c743cdd60f7a1ae3fad144730ba626abfbf33c9
 }

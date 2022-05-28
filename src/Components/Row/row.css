@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .row_container {
   margin-left: 40px;
   margin-top: 30px;
@@ -31,4 +32,39 @@
 
 .row_posterLarge:hover {
   transform: scale(1.11);
+=======
+.row_container {
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.row_title_container {
+  color: white;
+}
+.row_title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 35px;
+}
+.row_posters_container {
+  display: flex;
+}
+.row_posters {
+  display: flex;
+  overflow: scroll;
+  padding-right: 20px;
+  margin: 0;
+}
+
+.row_posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row_posterLarge {
+  max-height: 250px;
+}
+
+.row_posterLarge:hover {
+  transform: scale(1.11);
+>>>>>>> 4c743cdd60f7a1ae3fad144730ba626abfbf33c9
 }

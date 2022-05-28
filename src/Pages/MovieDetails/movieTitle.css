@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container {
     margin-top: 40px;
     padding-left: 20px;
@@ -97,3 +98,104 @@
     height: 100%;
     background-position: 50% 50%;
 }
+=======
+.container {
+    margin-top: 40px;
+    padding-left: 20px;
+}
+.movieDetailsContainer {
+    width: 100%;
+    height: 100%;
+}
+.boxGradient {
+    width: 40%;
+    height: 91%;
+    position: absolute;
+    background: linear-gradient(
+        90deg,
+        #181818 65%,
+        rgba(24, 24, 24, 0.862) 85%,
+        rgba(24, 24, 24, 0.1032387955182072714) 100%
+    );
+}
+.movieDetails {
+    display: flex;
+    margin-top: 40%;
+    margin-left: 20px;
+    flex-direction: column;
+}
+.movieTitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    margin: 5px;
+    color: #fff;
+}
+.movieinfo {
+    display: flex;
+    height: 20px;
+    width: fit-content;
+    margin: 20px 5px;
+    align-items: center;
+    flex-direction: row;
+}
+.seperator {
+    width: 1px;
+    height: 14px;
+    margin: 10px;
+    background-color: #a3a3a3;
+}
+.releaseYear,
+.voteCount,
+.origin {
+    font-size: 14px;
+    font-weight: 300;
+    color: #a3a3a3;
+}
+.voteCount {
+    border: 1px solid #a1a1a1;
+    padding: 1px;
+}
+.movieDescription {
+    padding: 5px;
+    width: 85%;
+}
+.description {
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 300;
+}
+.watchBtnContainer {
+    display: flex;
+    margin: 20px 20px;
+    width: 60%;
+    justify-content: space-around;
+}
+.btn {
+    width: 110px;
+    padding: 6px 8px;
+    font-size: 22px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #57575746;
+    color: #a3a3a3;
+    background-color: #393939;
+}
+.play:hover,
+.myList:hover {
+    color: #bbbbbb;
+    background-color: #323232;
+}
+.movieImg {
+    width: 80%;
+    float: right;
+    height: 100%;
+    background-position: 50% 50%;
+}
+>>>>>>> 4c743cdd60f7a1ae3fad144730ba626abfbf33c9
