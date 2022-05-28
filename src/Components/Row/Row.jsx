@@ -11,6 +11,7 @@ function Row({ fetchUrl, title, size }) {
     const data = async () => {
         const req = await axios.get(fetchUrl);
         console.log("👉", req);
+        
         //******************************************* Original ********************************
 
         setMovies(req.data.movies);
@@ -40,14 +41,14 @@ function Row({ fetchUrl, title, size }) {
                             {isLoading ? (
                                 <MovieCard
                                     id={item.movie_id}
-                                    path={item.backdrop_path}
+                                    path={item.backdropPath}
                                     poster_path={item.posterPath}
-                                    media={item.media_path}
+                                    media={item.mediaPath}
                                     title={item.movie_title}
                                     name={item.movie_name}
                                     description={item.movie_description}
                                     date={item.m_release_date}
-                                    result={movies}
+                                    // result={movies}
                                     size={size}
                                 />
                             ) : (

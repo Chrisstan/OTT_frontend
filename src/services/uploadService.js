@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from "../axios";
 
-const API_URL = "http://localhost:8080/movies/create_movie";
+const API_URL = "/movies/create_movie";
 
 const upload = (
     movie_id,

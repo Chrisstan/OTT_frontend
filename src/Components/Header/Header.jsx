@@ -13,7 +13,7 @@ import IconButton from "@mui/material/IconButton";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
-import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
+import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
 
 function Header() {
     const [logIn, setLogIn] = useState(
@@ -135,7 +135,7 @@ function Header() {
                             }}
                         >
                             {ROLE === "ROLE_ADMIN" ? (
-                                <>
+                                <div className="menu">
                                     <MenuItem onClick={navToUpload}>
                                         <ListItemIcon>
                                             <Logout fontSize="small" />
@@ -148,7 +148,8 @@ function Header() {
                                         </ListItemIcon>
                                         Movie List
                                     </MenuItem>
-                                </>
+                                </div>
+                                
                             ) : (
                                 ""
                             )}

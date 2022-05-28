@@ -20,21 +20,14 @@ function MovieTitle() {
 
     const data = async () => {
         const res = await axios
-            .get(
-                // ******************************* ORIGINAL *************************************
-
-                `http://localhost:8080/movies/get_movie_by_id/${id}`
-                // ******************************* ORIGINAL *************************************
-
-                // `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`
-            )
+            .get(`http://localhost:8080/movies/get_movie_by_id/${id}`)
             .then((response) => {
                 console.log("👉👉 >>", response.data);
                 setmovieData(response.data);
                 setisLoading(true);
             })
             .catch((error) => {
-                console.log(error.res);
+                // console.log(error.res);
             });
     };
 
@@ -43,10 +36,11 @@ function MovieTitle() {
     }, []);
 
     console.log("////*", isLoading);
+
     const movieRelease = () => {
         return (
-            movieData?.release_date.substr(0, 4) ||
-            movieData?.release_date.substr(0, 4)
+            movieData?.m_release_date.substr(0, 4) ||
+            movieData?.m_release_date.substr(0, 4)
         );
     };
     return (

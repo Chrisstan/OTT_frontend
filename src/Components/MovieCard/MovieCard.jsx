@@ -20,8 +20,11 @@ function MovieCard({
 
     // ***********************************************ORIGINAL******************************
 
-    const base_Url = "https://res.cloudinary.com/zohoott/image/upload/v1652282662/ott/";
-    {console.log("result******",media)}
+    const base_Url =
+        "https://res.cloudinary.com/zohoott/image/upload/v1652282662/ott/";
+    {
+        console.log("result******", media);
+    }
 
     // ***********************************************ORIGINAL******************************
 
@@ -29,7 +32,7 @@ function MovieCard({
 
     const navToPage = () => {
         loggedIn != null
-            ? navToTitle(`/movies/${id}${path}`)
+            ? navToTitle(`/movies/${id}/${path}/${media}`)
             : navToSignIn("/");
     };
 
@@ -47,7 +50,7 @@ function MovieCard({
                     onClick={navToPage}
                 ></img>
 
-                {console.log("result******",media)}
+                {console.log("result******", media)}
 
                 <div className="poster_name ">
                     {title !== undefined ? (

@@ -2,13 +2,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import requests from "./Components/request";
 import Header from "./Components/Header/Header";
 import Label from "./Components/Label/Label";
-// import Row from "./Components//Row";
+import VideoPlayer from "./Components/VideoPlayer/VideoPlayer";
 import MovieTitle from "./Pages/MovieDetails/MovieTitle";
 import JoinNow from "./Pages/Join_Now/JoinNow";
 import Row from "./Components/Row/Row";
 import LogIn from "./Pages/LogIn/LogIn";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel";
 import MovieList from "./Pages/MovieList/MovieList";
+import UpdateMovie from "./Pages/UpdateMovie/UpdateMovie";
 
 function App() {
     let isLarge = true;
@@ -48,7 +49,13 @@ function App() {
                     <Route path="/signup" element={<JoinNow />} />
                 </Routes>
                 <Routes>
+                    <Route path="/movies/:media" element={<VideoPlayer />} />
+                </Routes>
+                <Routes>
                     <Route path="/" element={<LogIn />} />
+                </Routes>
+                <Routes>
+                    <Route path="/update/:id" element={<UpdateMovie/>} />
                 </Routes>
 
                 <Routes>
@@ -98,7 +105,7 @@ function App() {
                 </Routes>
                 <Routes>
                     <Route
-                        path="/movies/:id/:path"
+                        path="/movies/:id/:path/:media"
                         element={
                             <>
                                 <Header />
