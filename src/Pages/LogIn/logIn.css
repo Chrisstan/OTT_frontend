@@ -1,42 +1,39 @@
 .auth_container{
     display: flex;
     justify-content: center;
-    z-index: 0;
+    /* z-index: 0; */
 }
 
-.sign_up_container{
+.sign_in_container{
     width: 35%;
     margin-top: 10%;
     border-radius: 15px;
     background-color: #3939395d;
     opacity: .8;
-    z-index: 1;
 }
-.sign_up_title_container{
+.sign_in_title_container{
     width: 100%;
     padding: 5px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
-.sign_up_title{
+.sign_in_title{
     font-size: 30px;
     font-weight: bold;
     color: rgb(246, 246, 246);
+    z-index: 10;
 }
-.sign_up_form{
+.sign_in_form{
     margin: 10%;
     margin-top: 20px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
-.field{
+.user_field{
     margin: 20px 5px;
-    /* padding: 10px; */
-    width: 100px;
+    /* width: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,19 +48,19 @@
     
 }
 .user_input{
-    width: 180px;
+    width: 60%;
     height: 25px;
     color: #fff;
     font-size: 20px;
     font-weight: bold;
     border-bottom: 2px solid white;
     border-top: 0;
-    /* border-right: 0; */
+    border-right: 0;
     border-left: 0;
     background-color: transparent;
 }
 
-.sign_up_btn{
+.sign_in_btn{
     width: 110px;
     height: 35px;
     font-size: 20px;
@@ -73,42 +70,49 @@
     background-color: rgb(246, 246, 246);
     cursor: pointer;
 }
-.sign_up_btn:hover{
+.sign_in_btn:hover{
     background-color: rgb(193, 189, 189);
 }
 
-.login_field{
+.sign_in_field{
     display: flex;
     justify-content: center;
+    margin-left: 350px;
 }
 
-.log_in_link{
+.sign_in_link{
     color: white;
+    
 }
 
-.success_msg{
-    font-size: 18px;
-    font-weight: 400;
-    padding: 5px;
-    border-radius: 5px;
-    color: #ffffff;
-    background: rgba(64, 201, 75, 0.815);
-}
-.alert_area{
+.otp_field{
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 5px;
-}
-.failure_msg{
-    font-size: 18px;
-    font-weight: 400;
-    padding: 5px;
-    border-radius: 5px;
-    color: #ffffff;
-    background: rgba(225, 82, 82, 0.664)
+    margin-left: 30px;
 }
 
+.otp{
+    color: white;
+    margin-right: auto;
+    
+}
+
+.otp_link{
+    color: white;
+    margin-right: 400px;
+    
+}
 .link{
     text-decoration: none;
+    text-decoration-line: none;
+}
+.generate_btn{
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: rgb(59, 59, 59);
+    background-color: rgb(246, 246, 246);
+    cursor: pointer;
 }

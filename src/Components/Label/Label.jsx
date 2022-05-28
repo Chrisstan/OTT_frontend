@@ -10,7 +10,7 @@ function Label() {
       </div>
       <div className="label_content">
         <p className="content">
-          Movies move us like nothing else can, whether theyre scary, funny,
+          Movies move us like nothing else can, whether they are scary, funny,
           dramatic, romantic or anywhere in-between. So many titles, so much to
           experience.
         </p>
