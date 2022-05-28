@@ -2,23 +2,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import requests from "./Components/request";
 import Header from "./Components/Header/Header";
 import Label from "./Components/Label/Label";
-<<<<<<< HEAD
-// import Row from "./Components//Row";
-=======
 import VideoPlayer from "./Components/VideoPlayer/VideoPlayer";
->>>>>>> 4c743cdd60f7a1ae3fad144730ba626abfbf33c9
 import MovieTitle from "./Pages/MovieDetails/MovieTitle";
 import JoinNow from "./Pages/Join_Now/JoinNow";
 import Row from "./Components/Row/Row";
 import LogIn from "./Pages/LogIn/LogIn";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel";
 import MovieList from "./Pages/MovieList/MovieList";
-<<<<<<< HEAD
-import VideoPlayer from "./Components/VideoPlayer/VideoPlayer";
 import OtpLogin from "./Pages/OtpLogin/OtpLogin";
-=======
 import UpdateMovie from "./Pages/UpdateMovie/UpdateMovie";
->>>>>>> 4c743cdd60f7a1ae3fad144730ba626abfbf33c9
 
 function App() {
     let isLarge = true;
@@ -58,7 +50,7 @@ function App() {
                     <Route path="/signup" element={<JoinNow />} />
                 </Routes>
                 <Routes>
-<<<<<<< HEAD
+
                     <Route path="/" element={<LogIn />} />
                 </Routes>
 
@@ -68,15 +60,10 @@ function App() {
 
                 <Routes>
                     <Route path="/movies/:media" element={<VideoPlayer/>} />
-=======
-                    <Route path="/movies/:media" element={<VideoPlayer />} />
                 </Routes>
-                <Routes>
-                    <Route path="/" element={<LogIn />} />
-                </Routes>
+
                 <Routes>
                     <Route path="/update/:id" element={<UpdateMovie/>} />
->>>>>>> 4c743cdd60f7a1ae3fad144730ba626abfbf33c9
                 </Routes>
 
                 <Routes>

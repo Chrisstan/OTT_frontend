@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth-service";
-import axios from "axios";
+import axios from "../../axios";
  import "../LogIn/logIn.css";
 
 function OtpLogin() {
@@ -13,7 +13,7 @@ function OtpLogin() {
 
     const generate = async () => {
         const res = await axios
-            .get(`http://localhost:8080/movies/otp?email=${email}`)
+            .get(`/movies/otp?email=${email}`)
             .then((response) => {
                 console.log("👉👉 >>", response.data);
                 // setOtp(response.data);
