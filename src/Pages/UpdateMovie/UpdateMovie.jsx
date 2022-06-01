@@ -39,8 +39,8 @@ function UpdateMovie() {
                 setBudget(response.data.movie_budget)
                 setRevenue(response.data.m_revenue)
                 setPoster(response.data.posterPath)
-                setBackDrop(response.data.backdropPath)
-                setMedia(response.data.mediaPath)
+                setBackDrop(response.data.backdrop_path)
+                setMedia(response.data.media_path)
                 console.log("👉👉 >>", response.data);
             })
             .catch((error) => {

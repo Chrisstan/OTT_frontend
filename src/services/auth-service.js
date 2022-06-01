@@ -24,11 +24,12 @@ const login = (username, password) => {
       });
   };
 
-  const otplogin = (email, otp) => {
+  const otplogin = (email, otp, password) => {
     return axios
-      .post(API_URL + "otp_login", {
+      .post(API_URL + "password_reset", {
         email,
         otp,
+        password,
       })
       .then((response) => {
         if (response.data.email) {

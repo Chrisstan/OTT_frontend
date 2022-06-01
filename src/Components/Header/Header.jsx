@@ -16,6 +16,7 @@ import Logout from "@mui/icons-material/Logout";
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
 
 function Header() {
+    const [movie, setMovie] = useState([]);
     const [logIn, setLogIn] = useState(
         JSON.parse(localStorage.getItem("user"))
     );
@@ -50,7 +51,8 @@ function Header() {
         ROLE = JSON.parse(localStorage.getItem("user")).roles[0];
         // setUser(Role);
         console.log(ROLE);
-    }
+    };
+    
 
     return (
         <div className="nav">

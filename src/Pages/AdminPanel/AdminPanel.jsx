@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { isEmail } from "validator";
 
 import "../AdminPanel/adminPanel.css";
 
@@ -28,16 +26,16 @@ function AdminPanel(url) {
 
     console.log(url);
 
-    const required = (value) => {
-        if (!value) {
-            setMessage("Plz Fill Out all the required Fields")
-            return (
-                <div className="failure_msg">
-                    <sup>*</sup>This field is required!
-                </div>
-            );
-        }
-    };
+    // const required = (value) => {
+    //     if (!value) {
+    //         setMessage("Plz Fill Out all the required Fields")
+    //         return (
+    //             <div className="failure_msg">
+    //                 <sup>*</sup>This field is required!
+    //             </div>
+    //         );
+    //     }
+    // };
 
     const submit = (e) => {
         e.preventDefault();
@@ -119,17 +117,13 @@ function AdminPanel(url) {
           if (!err) {   
             if(info.event=="success"){
                 if(e.target.id=='bd'){
-                    console.log("kgfxdxc");
                     setBackDrop(info.info.url.substring(63))
-                    console.log("kgfx------------------c",backDrop);
                 }
                 else if(e.target.id == 'p'){
-                    console.log("Vivek");
                     setPoster(info.info.url.substring(63))
                 }
                 
                 else if('mp' == e.target.id){
-                    console.log("Chrisstan");
                     setMedia(info.info.url.substring(63))
                 }
                }
@@ -141,7 +135,7 @@ function AdminPanel(url) {
             <div className="container">
                 <div className="upload_container">
                     <div className="upload_title_container">
-                        <h1 className="upload_title">Upload/ Edit Content</h1>
+                        <h1 className="upload_title">Upload Content</h1>
                     </div>
                     <div className="upload_form">
                         <div className="field id">
@@ -277,7 +271,7 @@ function AdminPanel(url) {
 
                         <div className="update_btn">
                             <button className="sign_up_btn" onClick={submit}>
-                                Update
+                                Upload
                             </button>
                         </div>
                     </div>

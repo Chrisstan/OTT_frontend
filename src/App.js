@@ -75,7 +75,7 @@ function App() {
                                 <Header />
                                 <Label />
                                 <Row
-                                    title="Netflix Trending"
+                                    title="Trending"
                                     fetchUrl={requests.fetchTrending}
                                     size={isLarge}
                                 />

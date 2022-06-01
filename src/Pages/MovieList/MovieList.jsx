@@ -155,10 +155,10 @@ function MovieList() {
                                             {movie.posterPath}
                                         </TableCell>
                                         <TableCell align={"center"}>
-                                            {movie.backdropPath}
+                                            {movie.backdrop_path}
                                         </TableCell>
                                         <TableCell align={"center"}>
-                                            {movie.mediaPath}
+                                            {movie.media_path}
                                         </TableCell>
                                         <TableCell align={"center"}>
                                             <div className="edit">

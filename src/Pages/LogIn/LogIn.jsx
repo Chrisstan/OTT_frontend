@@ -86,7 +86,7 @@ function LogIn() {
                     )}
 
                                     <div className="otp_field">
-                                        <p className="otp"> Login with  </p>
+                                        <p className="otp"> Reset password with  </p>
                                         <Link to="/otpLogin">
                                             <p className="otp_link"> OTP</p>
                                         </Link>
