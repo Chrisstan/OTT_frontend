@@ -2,20 +2,60 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import requests from "./Components/request";
 import Header from "./Components/Header/Header";
 import Label from "./Components/Label/Label";
-import Row from "./Components/Row";
+import VideoPlayer from "./Components/VideoPlayer/VideoPlayer";
 import MovieTitle from "./Pages/MovieDetails/MovieTitle";
 import JoinNow from "./Pages/Join_Now/JoinNow";
-import VideoPlayer from "./Components/VideoPlayer/VideoPlayer";
-
+import Row from "./Components/Row/Row";
+import LogIn from "./Pages/LogIn/LogIn";
+import AdminPanel from "./Pages/AdminPanel/AdminPanel";
+import MovieList from "./Pages/MovieList/MovieList";
+import OtpLogin from "./Pages/OtpLogin/OtpLogin";
+import UpdateMovie from "./Pages/UpdateMovie/UpdateMovie";
 
 function App() {
     let isLarge = true;
+    const userRole = () => {
+        if (localStorage.getItem("user")) {
+            console.log(
+                "AAAAAAAAAAAAAAAAAAA",
+                JSON.parse(localStorage.getItem("user")).roles[0]
+            );
+            let role = JSON.parse(localStorage.getItem("user")).roles[0];
+            if (role) {
+                return role;
+            }
+        }
+    };
     return (
         <>
-            
-             <Router>
+            <Router>
+                <Routes>
+                    {userRole() === "ROLE_ADMIN" ? (
+                        <Route path="/admin" element={<AdminPanel />} />
+                    ) : (
+                        <></>
+                    )}
+                    <Route
+                        path="/movies"
+                        element={
+                            <>
+                                <Header />
+                                <MovieList />
+                            </>
+                        }
+                    />
+                </Routes>
+
                 <Routes>
                     <Route path="/signup" element={<JoinNow />} />
+                </Routes>
+                <Routes>
+
+                    <Route path="/" element={<LogIn />} />
+                </Routes>
+
+                <Routes>
+                    <Route path="/otpLogin" element={<OtpLogin />} />
                 </Routes>
 
                 <Routes>
@@ -23,21 +63,23 @@ function App() {
                 </Routes>
 
                 <Routes>
+                    <Route path="/update/:id" element={<UpdateMovie/>} />
+                </Routes>
+
+                <Routes>
                     <Route
                         exact
-                        path="/"
+                        path="/home"
                         element={
                             <>
                                 <Header />
-
                                 <Label />
-                                 <Row
-                                    title="Netflix Trending"
+                                <Row
+                                    title="Trending"
                                     fetchUrl={requests.fetchTrending}
                                     size={isLarge}
                                 />
-                                {/*
-                                <Row
+                                {/* <Row
                                     title="Originals"
                                     fetchUrl={requests.fetchNetflixOriginals}
                                 />
@@ -65,17 +107,11 @@ function App() {
                                     title="Documentaries"
                                     fetchUrl={requests.fetchDocumentaries}
                                 /> */}
-                                 <Row
-                                    title="Thriller Movies"
-                                    fetchUrl={requests.fetchThrillerMovies}
-                
-                                />
-                            
                             </>
                         }
                     />
                 </Routes>
-                <Routes> 
+                <Routes>
                     <Route
                         path="/movies/:id/:path/:media"
                         element={
@@ -83,8 +119,8 @@ function App() {
                                 <Header />
                                 <MovieTitle />
                             </>
-                         } 
-                     /> 
+                        }
+                    />
                 </Routes>
             </Router>
         </>

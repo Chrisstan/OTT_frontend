@@ -1,13 +1,14 @@
 .container {
-    margin-top: 60px;
+    margin-top: 40px;
     padding-left: 20px;
 }
 .movieDetailsContainer {
     width: 100%;
+    height: 100%;
 }
 .boxGradient {
     width: 40%;
-    height: 600px;
+    height: 91%;
     position: absolute;
     background: linear-gradient(
         90deg,
@@ -32,7 +33,8 @@
 .movieinfo {
     display: flex;
     height: 20px;
-    margin: 5px;
+    width: fit-content;
+    margin: 20px 5px;
     align-items: center;
     flex-direction: row;
 }
@@ -69,17 +71,18 @@
 .watchBtnContainer {
     display: flex;
     margin: 20px 20px;
-    width: 50%;
+    width: 60%;
     justify-content: space-around;
 }
 .btn {
-    width: 190px;
+    width: 110px;
     padding: 6px 8px;
     font-size: 22px;
     font-weight: bold;
     border: 0;
     border-radius: 5px;
     cursor: pointer;
+    color: #57575746;
     color: #a3a3a3;
     background-color: #393939;
 }
@@ -91,6 +94,6 @@
 .movieImg {
     width: 80%;
     float: right;
-    height: 600px;
+    height: 100%;
     background-position: 50% 50%;
 }

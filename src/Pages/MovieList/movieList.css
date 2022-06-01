@@ -1,0 +1,22 @@
+.movie_table{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+/* 
+.icon_container{
+    
+    background-color: red;
+}
+.edit{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 50%;
+    background-color: green;
+} */
+
+.delete_icon, .edit_icon{
+    cursor: pointer;
+    color: red;
+}

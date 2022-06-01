@@ -23,17 +23,20 @@
     font-size: 30px;
     font-weight: bold;
     color: rgb(246, 246, 246);
-    z-index: 10;
 }
 .sign_up_form{
     margin: 10%;
     margin-top: 20px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .field{
-    margin: 20px 10px;
-    width: 100%;
+    margin: 20px 5px;
+    /* padding: 10px; */
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,14 +51,14 @@
     
 }
 .user_input{
-    width: 60%;
+    width: 180px;
     height: 25px;
     color: #fff;
     font-size: 20px;
     font-weight: bold;
     border-bottom: 2px solid white;
     border-top: 0;
-    border-right: 0;
+    /* border-right: 0; */
     border-left: 0;
     background-color: transparent;
 }
@@ -63,7 +66,6 @@
 .sign_up_btn{
     width: 110px;
     height: 35px;
-    margin: 20px;
     font-size: 20px;
     border-radius: 10px;
     font-weight: bold;
@@ -73,8 +75,40 @@
 }
 .sign_up_btn:hover{
     background-color: rgb(193, 189, 189);
-
 }
-.log_in_field{
+
+.login_field{
+    display: flex;
+    justify-content: center;
+}
+
+.log_in_link{
     color: white;
+}
+
+.success_msg{
+    font-size: 18px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ffffff;
+    background: rgba(64, 201, 75, 0.815);
+}
+.alert_area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.failure_msg{
+    font-size: 18px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ffffff;
+    background: rgba(225, 82, 82, 0.664)
+}
+
+.link{
+    text-decoration: none;
 }
