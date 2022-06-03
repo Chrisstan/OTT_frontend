@@ -240,7 +240,7 @@ function AdminPanel(url) {
                                 disabled={true}
                                 // validations={[required, valid_password]}
                             ></input>
-                            <button id="p" onClick={e=>movieUpload(e)}>Upload</button>
+                            <button id="p" onClick={e => movieUpload(e)}>Upload</button>
                         </div>
                         <div className="field backdrop">
                             <label className="input_lable">BackDrop Path</label>

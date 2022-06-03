@@ -15,11 +15,11 @@ import TableRow from "@mui/material/TableRow";
 
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditIcon from "@mui/icons-material/Edit";
-import { delete_movie } from "../../services/movieCrudService";
-import UpdateMovie from "../UpdateMovie/UpdateMovie";
+import movieCrudService from "../../services/movieCrudService"; 
 
 function MovieList() {
     const [movies, setMovies] = useState([]);
+    // console.log("  A          ",movies);
     const columns = [
         { id: "movie_id", label: "Movie Id", align: "center" },
         {
@@ -78,10 +78,18 @@ function MovieList() {
             });
     };
 
+    const delete_data = async(id) => {
+        console.log("AAAAAAAAAAAAAAAAAAAAAAA",id)
+        await movieCrudService.delete_movie(id);
+        data()
+       
+    }
+
     const navToUpdatePage = useNavigate();
 
     useEffect(() => {
         data();
+        
     }, []);
 
     console.log("💩💩💩💩💩💩💩", movies);
@@ -183,10 +191,9 @@ function MovieList() {
                                                 <DeleteOutlineIcon
                                                     className="delete_icon"
                                                     onClick={() =>
-                                                        delete_movie(
-                                                            movie.movie_id
-                                                        )
-                                                    }
+                                                        {delete_data(movie.movie_id)
+                                                        // data()
+                                                    }}
                                                 />
                                             </div>
                                         </TableCell>

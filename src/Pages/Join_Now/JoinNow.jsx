@@ -1,10 +1,9 @@
-import React from "react";
+import {React,useState} from "react";
 import { Link } from "react-router-dom";
 import { isEmail } from "validator";
 
 import "../Join_Now/joinNow.css";
 
-import { useState } from "react";
 import AuthService from "../../services/auth-service";
 
 const required = (value) => {

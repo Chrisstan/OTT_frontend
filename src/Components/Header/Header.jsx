@@ -58,11 +58,7 @@ function Header() {
         <div className="nav">
             <div className="nav_black">
                 <div className="logoContainer">
-                    <img
-                        src={require("../../asserts/logo/logo.png")}
-                        alt=""
-                        className="nav_logo"
-                    ></img>
+                    <h1 className="nav_logo"> STARNET +</h1>
                 </div>
                 {!logIn && (
                     <div className="btn_container">

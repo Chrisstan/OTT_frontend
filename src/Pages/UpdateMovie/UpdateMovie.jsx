@@ -1,5 +1,5 @@
-import { React, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { React, useEffect, } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { isEmail } from "validator";
 
 import "../AdminPanel/adminPanel.css";
@@ -7,7 +7,7 @@ import "../AdminPanel/adminPanel.css";
 import { useState } from "react";
 import axios from "../../axios";
 import UploadService from "../../services/uploadService";
-import { get_movie_by_id } from "../../services/movieCrudService";
+import movieCrudService, { get_movie_by_id } from "../../services/movieCrudService";
 
 function UpdateMovie() {
     const [movie, setMovie] = useState("");
@@ -52,6 +52,8 @@ function UpdateMovie() {
         data();
     }, []);
 
+    const navToListPage = useNavigate();
+
     const required = (value) => {
         if (!value) {
             setMessage("Plz Fill Out all the required Feilds");
@@ -67,7 +69,7 @@ function UpdateMovie() {
         e.preventDefault();
         setMessage("");
         setSuccessful(false);
-        UploadService.upload(
+        movieCrudService.update_movie(
             movieId,
             movieTitle,
             movieName,
@@ -83,6 +85,7 @@ function UpdateMovie() {
             (response) => {
                 setMessage(response.data.message);
                 setSuccessful(true);
+                 navToListPage("/movies")
             },
             (error) => {
                 const resMessage =
@@ -102,7 +105,7 @@ function UpdateMovie() {
             <div className="container">
                 <div className="upload_container">
                     <div className="upload_title_container">
-                        <h1 className="upload_title">Upload/ Edit Content</h1>
+                        <h1 className="upload_title">Edit Content</h1>
                     </div>
                     <div className="upload_form">
                         <div className="field id">
