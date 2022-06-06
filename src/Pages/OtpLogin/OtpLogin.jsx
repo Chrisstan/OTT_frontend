@@ -5,13 +5,14 @@ import axios from "../../axios";
  import "../LogIn/logIn.css";
 
 function OtpLogin() {
-    let navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [otp, setOtp] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [message, setMessage] = useState("");
     const [login, setLogin] = useState(false);
+    
+    let navigate = useNavigate();
 
     const generate = async () => {
         const res = await axios

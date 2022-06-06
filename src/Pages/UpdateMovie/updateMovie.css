@@ -1,0 +1,64 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.updateMovie,.descp{
+    margin: 0px 70px;
+    width: 80%;
+
+}
+.formTitle{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+.updateForm{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.movieInput{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-right: 80px;
+}
+.description{
+    width: 90%;
+    flex-direction: row;
+}
+.description>textarea{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    /* height: 40px; */
+    font-size: 16px;
+    color: #fff;
+    background: none;
+    padding-right: 5px;
+    margin: 10px;
+    margin-right: 40px;
+    resize: none;
+    
+}
+.movieInput>label{
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(165, 164, 164);
+}
+
+.movieInput>input{
+    height: 20px;
+    padding: 10px;
+    color: #fff;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background: none;
+}
+.movieInput>input::after{
+    color: red;
+}
