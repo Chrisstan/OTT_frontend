@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import "./movieCard.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Skeleton } from "@mui/material";
+// import { Skeleton } from "@mui/material";
 
 function MovieCard({
     id,

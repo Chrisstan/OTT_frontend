@@ -24,7 +24,7 @@ function AdminPanel(url) {
     const [message, setMessage] = useState("");
     const [successful, setSuccessful] = useState(false);
 
-    console.log(url);
+    
 
     // const required = (value) => {
     //     if (!value) {

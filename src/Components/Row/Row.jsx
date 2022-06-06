@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Skeleton } from "@mui/material";
+// import { Skeleton } from "@mui/material";
 import "./row.css";
 import axios from "../../axios";
 import MovieCard from "../MovieCard/MovieCard";
@@ -52,11 +52,12 @@ function Row({ fetchUrl, title, size }) {
                                 size={size}
                                 />
                             ) : (
-                                <Skeleton
-                                    variant="rectangular"
-                                    animation="wave"
-                                    sx={{ bgcolor: "#57575746" }}
-                                />
+                                <></>
+                                // <Skeleton
+                                //     variant="rectangular"
+                                //     animation="wave"
+                                //     sx={{ bgcolor: "#57575746" }}
+                                // />
                             )}
                         </>
                     ))}

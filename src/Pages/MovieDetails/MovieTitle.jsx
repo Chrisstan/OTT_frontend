@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "../../axios";
 import "./movieTitle.css";
-import { Skeleton } from "@mui/material";
+// import { Skeleton } from "@mui/material";
 import { padding } from "@mui/system";
 
 function MovieTitle() {
@@ -63,13 +63,14 @@ function MovieTitle() {
                                     {/* ****************************************************************                                 */}
                                 </h1>
                             ) : (
-                                <Skeleton
-                                    variant="h1"
-                                    animation="wave"
-                                    height={38}
-                                    width={280}
-                                    sx={{ bgcolor: "#57575746" }}
-                                />
+                                <></>
+                                // <Skeleton
+                                //     variant="h1"
+                                //     animation="wave"
+                                //     height={38}
+                                //     width={280}
+                                //     sx={{ bgcolor: "#57575746" }}
+                                // />
                             )}
                             <div className="movieinfo">
                                 <h5 className="releaseYear">
@@ -92,13 +93,14 @@ function MovieTitle() {
                                         </p>
                                     </div>
                                 ) : (
-                                    <Skeleton
-                                        sx={{ bgcolor: "#57575746" }}
-                                        variant="rectangular"
-                                        animation="wave"
-                                        height={70}
-                                        width={400}
-                                    />
+                                    <></>
+                                    // <Skeleton
+                                    //     sx={{ bgcolor: "#57575746" }}
+                                    //     variant="rectangular"
+                                    //     animation="wave"
+                                    //     height={70}
+                                    //     width={400}
+                                    // />
                                 )}
                             </>
                         </div>
