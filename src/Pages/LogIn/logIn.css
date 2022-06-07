@@ -1,53 +1,59 @@
-.auth_container{
+.auth_container {
     display: flex;
     justify-content: center;
     /* z-index: 0; */
 }
 
-.sign_in_container{
+.sign_in_container {
     width: 35%;
     margin-top: 10%;
     border-radius: 15px;
     background-color: #3939395d;
     opacity: .8;
 }
-.sign_in_title_container{
+
+.sign_in_title_container {
     width: 100%;
     padding: 5px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
-.sign_in_title{
+
+.sign_in_title {
     font-size: 30px;
     font-weight: bold;
     color: rgb(246, 246, 246);
     z-index: 10;
 }
-.sign_in_form{
+
+.sign_in_form {
     margin: 10%;
     margin-top: 20px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
 }
-.user_field{
+
+.user_field {
     margin: 20px 5px;
     /* width: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.input_lable{
+
+.input_lable {
     width: 90px;
     font-size: 20px;
     font-weight: 400;
     color: #fff;
     margin-right: 20px;
     text-align: center;
-    
+
 }
-.user_input{
+
+.user_input {
     width: 60%;
     height: 25px;
     color: #fff;
@@ -60,7 +66,7 @@
     background-color: transparent;
 }
 
-.sign_in_btn{
+.sign_in_btn {
     width: 110px;
     height: 35px;
     font-size: 20px;
@@ -70,43 +76,48 @@
     background-color: rgb(246, 246, 246);
     cursor: pointer;
 }
-.sign_in_btn:hover{
+
+.sign_in_btn:hover {
     background-color: rgb(193, 189, 189);
 }
 
-.sign_in_field{
+.sign_in_field {
     display: flex;
     justify-content: center;
     margin-left: 350px;
 }
 
-.sign_in_link{
+.sign_in_link {
+    margin-right: 5px;
     color: white;
-    
 }
 
-.otp_field{
+
+
+.otp_field {
     display: flex;
     justify-content: center;
     margin-left: 30px;
 }
 
-.otp{
+.otp {
     color: white;
     margin-right: auto;
-    
+
 }
 
-.otp_link{
+.otp_link {
     color: white;
     margin-right: 400px;
-    
+
 }
-.link{
+
+.link {
     text-decoration: none;
     text-decoration-line: none;
 }
-.generate_btn{
+
+.generate_btn {
     width: 100px;
     height: 40px;
     font-size: 14px;
@@ -116,56 +127,63 @@
     background-color: rgb(246, 246, 246);
     cursor: pointer;
 }
-.auth_container{
+
+.auth_container {
     display: flex;
     justify-content: center;
     /* z-index: 0; */
 }
 
-.sign_in_container{
+.sign_in_container {
     width: 35%;
     margin-top: 10%;
     border-radius: 15px;
     background-color: #3939395d;
     opacity: .8;
 }
-.sign_in_title_container{
+
+.sign_in_title_container {
     width: 100%;
     padding: 5px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
-.sign_in_title{
+
+.sign_in_title {
     font-size: 30px;
     font-weight: bold;
     color: rgb(246, 246, 246);
     z-index: 10;
 }
-.sign_in_form{
+
+.sign_in_form {
     margin: 10%;
     margin-top: 20px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
 }
-.user_field{
+
+.user_field {
     margin: 20px 5px;
     /* width: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.input_lable{
+
+.input_lable {
     width: 90px;
     font-size: 20px;
     font-weight: 400;
     color: #fff;
     margin-right: 20px;
     text-align: center;
-    
+
 }
-.user_input{
+
+.user_input {
     width: 60%;
     height: 25px;
     color: #fff;
@@ -178,7 +196,7 @@
     background-color: transparent;
 }
 
-.sign_in_btn{
+.sign_in_btn {
     width: 110px;
     height: 35px;
     font-size: 20px;
@@ -188,19 +206,21 @@
     background-color: rgb(246, 246, 246);
     cursor: pointer;
 }
-.sign_in_btn:hover{
+
+.sign_in_btn:hover {
     background-color: rgb(193, 189, 189);
 }
 
-.sign_in_field{
+.sign_in_field {
     display: flex;
     justify-content: center;
 }
 
-.sign_in_link{
+.sign_in_link {
     color: white;
 }
-.link{
+
+.link {
     text-decoration: none;
     text-decoration-line: none;
 }

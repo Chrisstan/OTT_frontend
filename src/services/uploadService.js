@@ -2,6 +2,7 @@ import axios from "../axios";
 
 const API_URL = "/movies/create_movie";
 
+
 const upload = (
     movie_id,
     movie_title,

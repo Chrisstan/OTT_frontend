@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth-service";
 import axios from "../../axios";
- import "../OtpLogin/otpLogin.css";
+import "../OtpLogin/otpLogin.css";
 
 function OtpLogin() {
     const [email, setEmail] = useState("");
     const [otp, setOtp] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
-    
+
     let navigate = useNavigate();
 
     const generate = async () => {
@@ -24,13 +24,13 @@ function OtpLogin() {
                 // console.log(error.res);
             });
     };
-    
+
     const submit = (e) => {
         e.preventDefault();
         setMessage("");
-        AuthService.otplogin(email,otp,password)
-        
-        .then((res) => {
+        AuthService.otplogin(email, otp, password)
+
+            .then((res) => {
                 // setLogin(true);
                 // localStorage.setItem("logIn", "Logged In");
                 // console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",res);
@@ -39,16 +39,16 @@ function OtpLogin() {
                 navigate("/");
                 // window.location.reload();
             },
-            (error) => {
-                const resMessage =
-                    (error.response &&
-                        error.response.data &&
-                        error.response.data.message) ||
-                    error.message ||
-                    error.toString();
-                setMessage(resMessage);
-            }
-        );
+                (error) => {
+                    const resMessage =
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString();
+                    setMessage(resMessage);
+                }
+            );
     };
 
     return (
@@ -68,47 +68,49 @@ function OtpLogin() {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             ></input>
-                        <div>
-                            <button className="generate_btn" onClick={generate}>Generate OTP</button>
+                            <div>
+                                <button className="generate_btn" onClick={generate}>Generate OTP</button>
+                            </div>
                         </div>
-                        </div>
-                        </div>
-                        <div className="user_field">
-                            <label className="input_lable">OTP</label>
-                            <input
-                                type="text"
-                                className="user_input"
-                                required
-                                value={otp}
-                                onChange={(e) => setOtp(e.target.value)}
-                            ></input>
                     </div>
                     <div className="user_field">
-                            <label className="input_lable">Password</label>
-                            <input
-                                name="password1"
-                                type="password"
-                                className="user_input"
-                                required
-                                value={password}
-                                
-                                onChange={(e) => setPassword(e.target.value)}
-                            ></input>
-                            </div>
-                        <div className="user_field">
-                            <button className="sign_in_btn" onClick={submit}>
-                                Submit
-                            </button>
-                        </div>
+                        <label className="input_lable">OTP</label>
+                        <input
+                            type="text"
+                            className="user_input"
+                            required
+                            value={otp}
+                            onChange={(e) => setOtp(e.target.value)}
+                        ></input>
+                    </div>
+                    <div className="user_field">
+                        <label className="input_lable">Password</label>
+                        <input
+                            name="password1"
+                            type="password"
+                            className="user_input"
+                            required
+                            value={password}
 
-                                    <div className="otp_field">
-                                        <p className="otp"> Login with  </p>
-                                        <Link to="/login">
-                                            <p className="otp_link"> Password</p>
-                                        </Link>
-                                    </div>
+                            onChange={(e) => setPassword(e.target.value)}
+                        ></input>
+                    </div>
+                    <div className="user_field">
+                        <button className="sign_in_btn" onClick={submit}>
+                            Submit
+                        </button>
+                    </div>
 
-            
+                    <div className="user_field">
+                        <p className="otp_login_lable">Login With</p>
+                        <span> </span>
+                        <Link to="/login">
+                            <p className="otp_pass_lable"> Password</p>
+                        </Link>
+                    </div>
+
+
+
                 </div>
             </div>
         </>

@@ -111,7 +111,7 @@ function UpdateMovie() {
 
 
   // console.log(arr)
-  var a = []
+  
   const onchangeInput = (e) => {
     const val = e.split(',').map((a) => { return (parseInt(a)) });
     setDatas(val)

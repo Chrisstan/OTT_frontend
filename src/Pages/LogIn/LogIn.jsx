@@ -85,19 +85,19 @@ function LogIn() {
                         </div>
                     )}
 
-                                    <div className="otp_field">
-                                        <p className="otp"> Reset password with  </p>
-                                        <Link to="/otpLogin">
-                                            <p className="otp_link"> OTP</p>
-                                        </Link>
-                                    </div>
-                                        <div className="sign_in_field"> 
-                                            <p className="sign_in_link">New User ?  </p>
-                                            <Link to="/signup">
-                                                <p className="sign_in_link link"> Sign up</p>
-                                            </Link>
-                                        </div>
-            
+                    <div className="user_field">
+                        <p className="sign_in_link"> Reset password with  </p>
+                        <Link to="/otpLogin">
+                            <p className="sign_in_link"> OTP</p>
+                        </Link>
+                    </div>
+                    <div className="user_field">
+                        <p className="sign_in_link">New User ?  </p>
+                        <Link to="/signup">
+                            <p className="sign_in_link link"> Sign up</p>
+                        </Link>
+                    </div>
+
                 </div>
             </div>
         </>

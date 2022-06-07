@@ -1,35 +1,37 @@
-.container{
+.container {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
-.updateMovie,.descp{
+
+.updateMovie{
     margin: 0px 70px;
     width: 80%;
 
 }
-.formTitle{
+
+.formTitle {
     display: flex;
     justify-content: center;
     color: #fff;
 }
-.updateForm{
+
+.updateForm {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.movieInput{
-    width: 400px;
+
+.movieInput {
+    /* width: 250px; */
     display: flex;
     flex-direction: column;
     margin-top: 40px;
     margin-right: 80px;
 }
-.description{
-    width: 90%;
-    flex-direction: row;
-}
-.description>textarea{
+
+
+.description>textarea {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap-reverse;
@@ -42,16 +44,17 @@
     margin: 10px;
     margin-right: 40px;
     resize: none;
-    
+
 }
-.movieInput>label{
+
+.movieInput>label {
     margin-bottom: 10px;
     font-size: 14px;
     font-weight: 600;
     color: rgb(165, 164, 164);
 }
 
-.movieInput>input{
+.movieInput>input {
     height: 20px;
     padding: 10px;
     color: #fff;
@@ -59,22 +62,22 @@
     border-radius: 5px;
     background: none;
 }
-.movieInput>input::after{
-    color: red;
-}
-.update_btn{
+
+
+
+.update_btn {
     display: flex;
     flex-direction: column-reverse;
     order: 6;
-    /* margin-left: 40%; */
-    /* margin-top: 20px; */
-    margin: 20px 40% ;
-  }
-  .msg{
-      display: flex;
-      flex-direction: column;
-  }
-  .failure_msg{
-      background: none;
-      color: rgb(208, 69, 69);
-  }
+    margin: 20px 40%;
+}
+
+.msg {
+    display: flex;
+    flex-direction: column;
+}
+
+.failure_msg {
+    background: none;
+    color: rgb(208, 69, 69);
+}
