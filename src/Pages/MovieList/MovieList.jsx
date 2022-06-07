@@ -72,6 +72,9 @@ function MovieList() {
             .get(`/movies/get_allmovies`)
 
             .then((response) => {
+                response.json()
+            })
+            .then((response) => {
                 console.log("👉👉 >>", response.data);
                 setMovies(response.data);
             })
@@ -99,9 +102,11 @@ function MovieList() {
     console.log("💩💩💩💩💩💩💩", movies);
 
     return (
+
         <div className="movie_table">
-            <DataGrid columns={columns}
-            rows= {movies}
+            <DataGrid
+                rows={movies}
+                columns={columns}
             />
 
         </div>
