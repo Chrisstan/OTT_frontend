@@ -69,6 +69,7 @@ function MovieList() {
     const data = async () => {
         const req = await axios
             .get(`/movies/get_allmovies`)
+            
             .then((response) => {
                 console.log("👉👉 >>", response.data);
                 setMovies(response.data);

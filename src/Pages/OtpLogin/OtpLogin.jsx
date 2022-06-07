@@ -41,7 +41,7 @@ function OtpLogin() {
                 //     setPassword(password)
                 // }
 
-                navigate("/home");
+                navigate("/");
                 // window.location.reload();
             },
             (error) => {
@@ -133,7 +133,7 @@ function OtpLogin() {
 
                                     <div className="otp_field">
                                         <p className="otp"> Login with  </p>
-                                        <Link to="/">
+                                        <Link to="/login">
                                             <p className="otp_link"> Password</p>
                                         </Link>
                                     </div>

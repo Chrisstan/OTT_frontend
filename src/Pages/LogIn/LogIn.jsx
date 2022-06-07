@@ -23,7 +23,7 @@ function LogIn() {
                     res
                 );
 
-                navigate("/home");
+                navigate("/");
                 // window.location.reload();
             },
             (error) => {

@@ -81,7 +81,7 @@ function App() {
                                 />
                                 {/* <Row
                                     title="Originals"
-                                    fetchUrl={requests.fetchNetflixOriginals}
+                                    fetchUrl={requests.fetchOriginals}
                                 />
                                 <Row
                                     title="TopRated"

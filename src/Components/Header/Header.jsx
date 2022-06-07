@@ -39,6 +39,10 @@ function Header() {
         navigate("/movies");
     };
 
+    const navToHome = () => {
+        navigate("/");
+    };
+
     let ROLE;
 
     if (logIn) {
@@ -52,7 +56,7 @@ function Header() {
         <div className="nav">
             <div className="nav_black">
                 <div className="logoContainer">
-                    <img className="nav_logo" src={require("../../asserts/logo.png")}></img>
+                    <img className="nav_logo" src={require("../../asserts/logo.png")} onClick={navToHome}></img>
                 </div>
                 {!logIn && (
                     <div className="btn_container">
@@ -61,7 +65,7 @@ function Header() {
                                 <button className="join_btn">JOIN NOW</button>
                             </div>
                         </Link>
-                        <Link to="/">
+                        <Link to="/login">
                             <div className="nav_signInBtn">
                                 <button className="signInBtn">LOG IN</button>
                             </div>

@@ -5,11 +5,16 @@ import { isEmail } from "validator";
 import "../UpdateMovie/updateMovie.css";
 
 import { useState } from "react";
+
+// import { TagPicker } from "rsuite";
 import axios from "../../axios";
 import UploadService from "../../services/uploadService";
 import movieCrudService, {
   get_movie_by_id,
 } from "../../services/movieCrudService";
+import Select from "react-select";
+import { optionLength } from "./data";
+
 
 function UpdateMovie() {
   const [movie, setMovie] = useState("");
@@ -26,8 +31,9 @@ function UpdateMovie() {
   const [media, setMedia] = useState("");
   const [message, setMessage] = useState("");
   const [successful, setSuccessful] = useState(false);
+  const [datas, setDatas] = useState([]);
   const { id } = useParams();
-
+  console.log("!!!!!!!1",datas);
   const data = async () => {
     const res = await axios
       .get(`/movies/get_movie_by_id/${id}`)
@@ -103,8 +109,20 @@ function UpdateMovie() {
         }
       );
     console.log("message ", message);
+  };
 
-     }
+  
+  // console.log(arr)
+  var a = []
+  const onchangeInput = (e) => {
+    const val = e.split(',').map((a)=>{return (parseInt(a))}) ;
+    setDatas(val)
+    console.log("@@@",datas);
+  };
+  // setDatas()
+  
+  
+
      function movieUpload (e) {
       window.cloudinary.openUploadWidget(
         {
@@ -265,6 +283,12 @@ function UpdateMovie() {
                                   value={movieDescp}
                                   onChange={(x) => setMovieDescp(x.target.value)} />
               </div>
+              <div className="movieInput description">
+                <label htmlFor="movie_descp">
+                  Movie Genres
+                </label>
+                <input type="text" onChange={(e)=> onchangeInput(e.target.value)}/>
+                </div>
             </div>
   
             <div className="update_btn">
