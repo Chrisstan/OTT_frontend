@@ -34,6 +34,12 @@ function AdminPanel(url) {
   //     }
   // };
 
+  const add_genre = (e) => {
+    e.preventDefault();
+    // console.log("sdjfbsdjfj")
+    UploadService.addGenre(movieId, datas)
+  }
+
   const submit = (e) => {
     e.preventDefault();
     setMessage("");
@@ -231,6 +237,12 @@ function AdminPanel(url) {
             </div>
             </form>
           </div>
+          <div className="movieInput description">
+              <label htmlFor="movie_descp">
+                Movie Genres
+              </label>
+              <input type="text" onChange={(e) => onchangeInput(e.target.value)} />
+            </div>
 
           <div className="update_btn">
             <button className="sign_up_btn" onClick={submit}>
