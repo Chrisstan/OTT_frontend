@@ -1,5 +1,6 @@
 import "./label.css";
-import {React, useState,useEffect, useRef }from "react";
+import {React, useState,useEffect}from "react";
+import {Link} from "react-router-dom";
 import axios from '../../axios'
 import requests from "../request";
 // import 'bootstrap/dist/css/bootstrap.min.css'
@@ -42,7 +43,6 @@ function Label() {
 
     return (
         <>
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <header className="banner"
             style={{
                 marginTop:"50px",
@@ -59,15 +59,16 @@ function Label() {
                 </h1>
 
                 <div className="banner_buttons">
-                    <button className="banner_button">Play</button>
-                    <button className="banner_button">My List</button>
+                <Link to={`/movies/${movie?.media_path}`} className="vLink">
+                                <button className="banner_button">Play</button>
+                            </Link>
                 </div>
                 <h1 className="banner_description">{truncate(movie?.movie_description, 150)}</h1>
             </div>
 
             <div className="banner--fadeBottom" />
         </header>
-        </div>
+
 
         </>
 

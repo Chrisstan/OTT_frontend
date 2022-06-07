@@ -51,7 +51,7 @@ function App() {
                 </Routes>
                 <Routes>
 
-                    <Route path="/" element={<LogIn />} />
+                    <Route path="/login" element={<LogIn />} />
                 </Routes>
 
                 <Routes>
@@ -69,7 +69,7 @@ function App() {
                 <Routes>
                     <Route
                         exact
-                        path="/home"
+                        path="/"
                         element={
                             <>
                                 <Header />

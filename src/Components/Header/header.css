@@ -18,16 +18,20 @@
 
 .logoContainer {
   margin-left: 5px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   display: flex;
   justify-content: center;
   align-items: center;
   object-fit: contain;
+  height: 9 0px;
+  width:174px;
 }
 
 .nav_logo {
-  height: 70px;
-  color: #f40612;
+  position: fixed;
+    left: 20px;
+    width: 80px;
+    object-fit: contain;
 }
 
 .btn_container {

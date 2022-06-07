@@ -2,21 +2,15 @@ import "./header.css";
 import AuthService from "../../services/auth-service";
 import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import AccountCircle from '@mui/icons-material';
-
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import PersonAdd from "@mui/icons-material/PersonAdd";
-import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
 
 function Header() {
-    const [movie, setMovie] = useState([]);
     const [logIn, setLogIn] = useState(
         JSON.parse(localStorage.getItem("user"))
     );
@@ -58,7 +52,7 @@ function Header() {
         <div className="nav">
             <div className="nav_black">
                 <div className="logoContainer">
-                    <h1 className="nav_logo"> STARNET +</h1>
+                    <img className="nav_logo" src={require("../../asserts/logo.png")}></img>
                 </div>
                 {!logIn && (
                     <div className="btn_container">
@@ -133,7 +127,8 @@ function Header() {
                             }}
                         >
                             {ROLE === "ROLE_ADMIN" ? (
-                                <>
+                                <div>
+
                                     <MenuItem onClick={navToUpload}>
                                         <ListItemIcon>
                                             <Logout fontSize="small" />
@@ -146,7 +141,7 @@ function Header() {
                                         </ListItemIcon>
                                         Movie List
                                     </MenuItem>
-                                </>
+                                </div>
                             ) : (
                                 ""
                             )}

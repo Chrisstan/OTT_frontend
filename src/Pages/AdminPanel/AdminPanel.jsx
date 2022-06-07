@@ -69,7 +69,8 @@ function AdminPanel(url) {
     console.log("message ", message);
   };
 
-  const movieUpload = async (e) => {
+
+  function movieUpload (e) {
     window.cloudinary.openUploadWidget(
       {
         cloudName: "zohoott",
@@ -122,162 +123,296 @@ function AdminPanel(url) {
   };
   return (
     <>
-      <div className="container">
-        <div className="upload_container">
-          <div className="upload_title_container">
-            <h1 className="upload_title">Upload Content</h1>
-          </div>
-          <div className="upload_form">
-            <div className="field id">
-              <label className="input_lable">Movie Id</label>
-              <input
-                type="number"
-                className="user_input"
-                required
+      <>
+        <div className="container">
+          <div className="updateMovie">
+            <h1 className="formTitle">Upload Movie</h1>
+            <form action="" className="updateForm">
+              <div className="movieInput">
+                <label htmlFor="id">Movie Id</label>
+                <input type="number"
+                 required
                 value={movieId}
-                onChange={(x) => setMovieId(x.target.value)}
-                // validations={[required]}
-              ></input>
-            </div>
-
-            <div className="field title">
-              <label className="input_lable">Movie Title</label>
-              <input
-                type="text"
-                className="user_input"
-                required
-                value={movieTitle}
-                onChange={(x) => setMovieTitle(x.target.value)}
-                // validations={[required, valid_email]}
-              ></input>
-            </div>
-
-            <div className="field name">
-              <label className="input_lable">Movie Name</label>
-              <input
-                type="text"
-                className="user_input"
-                required
-                value={movieName}
-                onChange={(x) => setMovieName(x.target.value)}
-                // validations={[required, valid_password]}
-              ></input>
-            </div>
-            <div className="field date">
-              <label className="input_lable">Release Date</label>
-              <input
-                type="date"
-                className="user_input"
-                required
-                value={release}
-                onChange={(x) => setRelease(x.target.value)}
-                // validations={[required, valid_password]}
-              ></input>
-            </div>
-            <div className="field descp">
-              <label className="input_lable">Movie Description</label>
-              <input
-                type="text"
-                className="user_input desc"
-                required
-                value={movieDescp}
-                onChange={(x) => setMovieDescp(x.target.value)}
-                // validations={[required, valid_password]}
-              ></input>
-            </div>
-            <div className="field popularity">
-              <label className="input_lable">Popularity</label>
-              <input
-                type="number"
-                className="user_input"
-                value={popularity}
-                onChange={(x) => setPopularity(x.target.value)}
-                // validations={[required, valid_password]}
-              ></input>
-            </div>
-            <div className="field budget">
-              <label className="input_lable">Movie Budget</label>
-              <input
-                type="number"
-                className="user_input"
-                required
-                value={budget}
-                onChange={(x) => setBudget(x.target.value)}
-                // validations={[required, valid_password]}
-              ></input>
-            </div>
-            <div className="field revenue">
-              <label className="input_lable">Revenue</label>
-              <input
-                type="number"
-                className="user_input"
-                value={revenue}
-                onChange={(x) => setRevenue(x.target.value)}
-                // validations={[required, valid_password]}
-              ></input>
-            </div>
-            <div className="field poster">
-              <label className="input_lable">Poster Path</label>
-              <input
-                type="text"
-                className="user_input"
-                required
-                value={poster == "" ? "" : poster}
-                onChange={(x) => setPoster(x.target.value)}
-                disabled={true}
-                // validations={[required, valid_password]}
-              ></input>
-              <button id="p" onClick={(e) => movieUpload(e)}>
-                Upload
-              </button>
-            </div>
-            <div className="field backdrop">
-              <label className="input_lable">BackDrop Path</label>
-              <input
-                type="text"
-                className="user_input"
-                required
-                value={backDrop == "" ? "" : backDrop}
-                onChange={(x) => setBackDrop(x.target.value)}
-                disabled={true}
-              ></input>
-              <button id="bd" onClick={(e) => movieUpload(e)}>
-                Upload
-              </button>
-            </div>
-            <div className="field media">
-              <label className="input_lable">Media Path</label>
-              <input
-                type="text"
-                className="user_input"
-                required
-                value={media == "" ? "" : media}
-                onChange={(x) => setMedia(x.target.value)}
-                disabled={true}
-              ></input>
-              <button id="mp" onClick={(e) => movieUpload(e)}>
-                Upload
-              </button>
-            </div>
-
-            <div className="update_btn">
-              <button className="sign_up_btn" onClick={submit}>
-                Upload
-              </button>
+                 onChange={(x) => setMovieId(x.target.value)} />
+              </div>
+              <div className="movieInput">
+                <label htmlFor="movie_name">Movie Name</label>
+                <input type="text"
+                                // className="user_input"
+                                required
+                                value={movieName}
+                                onChange={(x) => setMovieName(x.target.value)} />
+              </div>
+              <div className="movieInput">
+                <label htmlFor="movie_title">Movie Title</label>
+                <input type="text"
+                                // className="user_input"
+                                required
+                                value={movieTitle}
+                                onChange={(x) => setMovieTitle(x.target.value)} />
+              </div>
+              <div className="movieInput">
+                <label htmlFor="movie_release">Release</label>
+                <input type="date"
+                                // className="user_input"
+                                required
+                                value={release}
+                                onChange={(x) => setRelease(x.target.value)}/>
+              </div>
+              <div className="movieInput">
+                <label htmlFor="movie_popularity">Popularity</label>
+                <input type="number" step="0.1"
+                                // className="user_input"
+                                value={popularity}
+                                onChange={(x) => setPopularity(x.target.value)} />
+              </div>
+              <div className="movieInput">
+                <label htmlFor="movie_budget">Budget</label>
+                <input type="number"
+                                // className="user_input"
+                                required
+                                value={budget}
+                                onChange={(x) => setBudget(x.target.value)} />
+              </div>
+              <div className="movieInput">
+                <label htmlFor="movie_revenue">Revenue</label>
+                <input type="number"
+                                // className="user_input"
+                                value={revenue}
+                                onChange={(x) => setRevenue(x.target.value)} />
+              </div>
+              <div className="movieInput">
+                <label htmlFor="movie_poster">Poster URL</label>
+                <input type="text"
+                                // className="user_input"
+                                required
+                                value={poster}
+                                onChange={(x) => setPoster(x.target.value)}
+                                disabled={true} />
+                                
+                        <button id="p" onClick={(e) => movieUpload(e)}>
+                                  Upload
+                        </button>
+              </div>
+              <div className="movieInput">
+                <label htmlFor="movie_thumbnail">Thumbnail URL</label>
+                <input type="text"
+                                // className="user_input"
+                                required
+                                value={backDrop}
+                                onChange={(x) => setBackDrop(x.target.value)}
+                                disabled={true} />
+                               
+                                <button id="bd" onClick={(e) => movieUpload(e)}>
+                                       Upload
+                                  </button>
+              </div>
+              <div className="movieInput">
+                <label htmlFor="movie_url">Movie URL</label>
+                <input type="text"
+                                // className="user_input"
+                                required
+                                value={media}
+                                onChange={(x) => setMedia(x.target.value)}
+                                disabled={true} />
+                                
+                                <button id="mp" onClick={(e) => movieUpload(e)}>
+                                     Upload
+                                 </button>
+              </div>
+            </form>
+          </div>
+          <div className="descp">
+            <div className="movieInput description">
+              <label htmlFor="movie_descp">Movie Description</label>
+              <textarea  type="text"
+                                // className="user_input desc"
+                                required
+                                value={movieDescp}
+                                onChange={(x) => setMovieDescp(x.target.value)} />
             </div>
           </div>
-          {message && (
-            <div className="alert_area">
-              <div className={successful ? "success_msg" : "failure_msg"}>
-                {message ? message : setMessage(" ")}
-                {message ? message : setMessage(" ")}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </>
+
+          <div className="update_btn">
+                            <button className="sign_up_btn" onClick={submit}>
+                                Upload
+                            </button>
+                        </div>
+                    {message && (
+                        <div className="alert_area">
+                            <div
+                                className={
+                                    successful ? "success_msg" : "failure_msg"
+                                }
+                            >
+                                {message ? message : setMessage(" ")}
+                                
+                                {message ? message : setMessage(" ")}
+                            </div>
+                        </div>
+                    )}
+                </div>
+                </>
+      </>
   );
+  // return (
+  //   <>
+  //     <div className="container">
+  //       <div className="upload_container">
+  //         <div className="upload_title_container">
+  //           <h1 className="upload_title">Upload Content</h1>
+  //         </div>
+  //         <div className="upload_form">
+  //           <div className="field id">
+  //             <label className="input_lable">Movie Id</label>
+  //             <input
+  //               type="number"
+  //               className="user_input"
+  //               required
+  //               value={movieId}
+  //               onChange={(x) => setMovieId(x.target.value)}
+  //               // validations={[required]}
+  //             ></input>
+  //           </div>
+
+  //           <div className="field title">
+  //             <label className="input_lable">Movie Title</label>
+  //             <input
+  //               type="text"
+  //               className="user_input"
+  //               required
+  //               value={movieTitle}
+  //               onChange={(x) => setMovieTitle(x.target.value)}
+  //               // validations={[required, valid_email]}
+  //             ></input>
+  //           </div>
+
+  //           <div className="field name">
+  //             <label className="input_lable">Movie Name</label>
+  //             <input
+  //               type="text"
+  //               className="user_input"
+  //               required
+  //               value={movieName}
+  //               onChange={(x) => setMovieName(x.target.value)}
+  //               // validations={[required, valid_password]}
+  //             ></input>
+  //           </div>
+  //           <div className="field date">
+  //             <label className="input_lable">Release Date</label>
+  //             <input
+  //               type="date"
+  //               className="user_input"
+  //               required
+  //               value={release}
+  //               onChange={(x) => setRelease(x.target.value)}
+  //               // validations={[required, valid_password]}
+  //             ></input>
+  //           </div>
+  //           <div className="field descp">
+  //             <label className="input_lable">Movie Description</label>
+  //             <input
+  //               type="text"
+  //               className="user_input desc"
+  //               required
+  //               value={movieDescp}
+  //               onChange={(x) => setMovieDescp(x.target.value)}
+  //               // validations={[required, valid_password]}
+  //             ></input>
+  //           </div>
+  //           <div className="field popularity">
+  //             <label className="input_lable">Popularity</label>
+  //             <input
+  //               type="number"
+  //               className="user_input"
+  //               value={popularity}
+  //               onChange={(x) => setPopularity(x.target.value)}
+  //               // validations={[required, valid_password]}
+  //             ></input>
+  //           </div>
+  //           <div className="field budget">
+  //             <label className="input_lable">Movie Budget</label>
+  //             <input
+  //               type="number"
+  //               className="user_input"
+  //               required
+  //               value={budget}
+  //               onChange={(x) => setBudget(x.target.value)}
+  //               // validations={[required, valid_password]}
+  //             ></input>
+  //           </div>
+  //           <div className="field revenue">
+  //             <label className="input_lable">Revenue</label>
+  //             <input
+  //               type="number"
+  //               className="user_input"
+  //               value={revenue}
+  //               onChange={(x) => setRevenue(x.target.value)}
+  //               // validations={[required, valid_password]}
+  //             ></input>
+  //           </div>
+  //           <div className="field poster">
+  //             <label className="input_lable">Poster Path</label>
+  //             <input
+  //               type="text"
+  //               className="user_input"
+  //               required
+  //               value={poster == "" ? "" : poster}
+  //               onChange={(x) => setPoster(x.target.value)}
+  //               disabled={true}
+  //               // validations={[required, valid_password]}
+  //             ></input>
+  //             <button id="p" onClick={(e) => movieUpload(e)}>
+  //               Upload
+  //             </button>
+  //           </div>
+  //           <div className="field backdrop">
+  //             <label className="input_lable">BackDrop Path</label>
+  //             <input
+  //               type="text"
+  //               className="user_input"
+  //               required
+  //               value={backDrop == "" ? "" : backDrop}
+  //               onChange={(x) => setBackDrop(x.target.value)}
+  //               disabled={true}
+  //             ></input>
+  //             <button id="bd" onClick={(e) => movieUpload(e)}>
+  //               Upload
+  //             </button>
+  //           </div>
+  //           <div className="field media">
+  //             <label className="input_lable">Media Path</label>
+  //             <input
+  //               type="text"
+  //               className="user_input"
+  //               required
+  //               value={media == "" ? "" : media}
+  //               onChange={(x) => setMedia(x.target.value)}
+  //               disabled={true}
+  //             ></input>
+  //             <button id="mp" onClick={(e) => movieUpload(e)}>
+  //               Upload
+  //             </button>
+  //           </div>
+
+  //           <div className="update_btn">
+  //             <button className="sign_up_btn" onClick={submit}>
+  //               Upload
+  //             </button>
+  //           </div>
+  //         </div>
+  //         {message && (
+  //           <div className="alert_area">
+  //             <div className={successful ? "success_msg" : "failure_msg"}>
+  //               {message ? message : setMessage(" ")}
+  //               {message ? message : setMessage(" ")}
+  //             </div>
+  //           </div>
+  //         )}
+  //       </div>
+  //     </div>
+  //   </>
+  // );
 }
 
 export default AdminPanel;
