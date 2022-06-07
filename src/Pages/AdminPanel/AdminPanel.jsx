@@ -19,6 +19,7 @@ function AdminPanel(url) {
   const [media, setMedia] = useState("");
   const [message, setMessage] = useState("");
   const [successful, setSuccessful] = useState(false);
+  const [datas, setDatas] = useState([]);
 
   // console.log(url);
 
@@ -32,6 +33,12 @@ function AdminPanel(url) {
   //         );
   //     }
   // };
+
+  const add_genre = (e) => {
+    e.preventDefault();
+    // console.log("sdjfbsdjfj")
+    UploadService.addGenre(movieId, datas)
+  }
 
   const submit = (e) => {
     e.preventDefault();
@@ -66,6 +73,12 @@ function AdminPanel(url) {
       }
     );
     // console.log("message ", message);
+  };
+  var a = []
+  const onchangeInput = (e) => {
+    const val = e.split(',').map((a) => { return (parseInt(a)) });
+    setDatas(val)
+    // console.log("@@@",datas);
   };
 
 
@@ -222,9 +235,15 @@ function AdminPanel(url) {
                                 onChange={(x) => setMovieDescp(x.target.value)} />
             </div>
           </div>
+          <div className="movieInput description">
+              <label htmlFor="movie_descp">
+                Movie Genres
+              </label>
+              <input type="text" onChange={(e) => onchangeInput(e.target.value)} />
+            </div>
 
           <div className="update_btn">
-                            <button className="sign_up_btn" onClick={submit}>
+                            <button className="sign_up_btn" onClick={(e) => { submit(e); add_genre(e) }}>
                                 Upload
                             </button>
                         </div>

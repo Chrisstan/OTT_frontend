@@ -1,6 +1,7 @@
 import axios from "../axios";
 
 const API_URL = "/movies/create_movie";
+const GENRE_URL = `/movies/mapGenre/`
 
 const upload = (
     movie_id,
@@ -30,7 +31,14 @@ const upload = (
     });
 };
 
+const addGenre = (movie_id, genre_id) => {
+    console.log(movie_id,genre_id);
+    return axios.post(GENRE_URL + movie_id +`/`+ genre_id)
+}
+
+
 const UploadService = {
     upload,
+    addGenre,
 };
 export default UploadService;

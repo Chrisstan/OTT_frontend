@@ -83,6 +83,26 @@ function App() {
                                     title="Action Movies"
                                     fetchUrl={requests.fetchActionMovies}
                                 />
+                                 <Row
+                                    title="Thriller Movies"
+                                    fetchUrl={requests.fetchThrillerMovies}
+                                />
+                                 <Row
+                                    title="Comedy Movies"
+                                    fetchUrl={requests.fetchComedy}
+                                />
+                                 <Row
+                                    title="Adventure Movies"
+                                    fetchUrl={requests.fetchAdventure}
+                                />
+                                 <Row
+                                    title="Romance Movies"
+                                    fetchUrl={requests.fetchRomance}
+                                />
+                                 <Row
+                                    title="Crime Movies"
+                                    fetchUrl={requests.fetchCrime}
+                                />
                             </>
                         }
                     />
