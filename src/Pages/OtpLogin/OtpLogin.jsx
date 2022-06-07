@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth-service";
 import axios from "../../axios";
- import "../LogIn/logIn.css";
+ import "../OtpLogin/otpLogin.css";
 
 function OtpLogin() {
     const [email, setEmail] = useState("");
     const [otp, setOtp] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
     const [message, setMessage] = useState("");
-    const [login, setLogin] = useState(false);
     
     let navigate = useNavigate();
 
@@ -23,7 +21,7 @@ function OtpLogin() {
                 // setisLoading(true);
             })
             .catch((error) => {
-                console.log(error.res);
+                // console.log(error.res);
             });
     };
     
@@ -35,11 +33,8 @@ function OtpLogin() {
         .then((res) => {
                 // setLogin(true);
                 // localStorage.setItem("logIn", "Logged In");
-                console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",res);
-                console.log(login);
-                // if(password==confirmPassword){
-                //     setPassword(password)
-                // }
+                // console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",res);
+                // console.log(login);
 
                 navigate("/");
                 // window.location.reload();
@@ -100,36 +95,11 @@ function OtpLogin() {
                                 onChange={(e) => setPassword(e.target.value)}
                             ></input>
                             </div>
-
-                            {/* <div className="user_field">
-                            <label className="input_lable">Confirm Password</label>
-                            <input
-                                name="password2"
-                                type="password"
-                                className="user_input"
-                                required
-                                value={confirmPassword}
-                                onChange={setConfirmPassword}
-
-                            ></input>
-                            </div> */}
                         <div className="user_field">
                             <button className="sign_in_btn" onClick={submit}>
                                 Submit
                             </button>
                         </div>
-                    {message && (
-                        <div className="alert_area">
-                            <div
-                                className={
-                                    login ? "success_msg" : "failure_msg"
-                                }
-                                role="alert"
-                            >
-                                {message ? message : setMessage(" ")}
-                            </div>
-                        </div>
-                    )}
 
                                     <div className="otp_field">
                                         <p className="otp"> Login with  </p>

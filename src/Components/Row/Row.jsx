@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { Skeleton } from "@mui/material";
 import "./row.css";
 import axios from "../../axios";
 import MovieCard from "../MovieCard/MovieCard";
@@ -10,15 +9,13 @@ function Row({ fetchUrl, title, size }) {
 
     const data = async () => {
         const req = await axios.get(fetchUrl);
-        console.log("👉", req);
-        //******************************************* Original ********************************
+        // console.log("👉", req);
 
         setMovies(req.data.movies);
 
-        //******************************************* Original ********************************
         // setMovies(req.data.results);
         setisLoading(true);
-        console.log("!!!!!!!Loaded!!!!!!!!!!");
+        // console.log("!!!!!!!Loaded!!!!!!!!!!");
     };
 
     useEffect(() => {
@@ -32,7 +29,7 @@ function Row({ fetchUrl, title, size }) {
             </div>
             <div className="row_posters_container">
                 <div className="row_posters">
-                    {console.log("********@@@@@@@@", movies)}
+                    {/* {console.log("********@@@@@@@@", movies)} */}
                     {movies.map((item) => (
                         <>
                             {/* {console.log("***###", item)} */}

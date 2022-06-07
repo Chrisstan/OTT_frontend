@@ -137,7 +137,7 @@ function JoinNow() {
                         <p className="log_in_link">
                             Already Have an account ?{" "}
                         </p>
-                        <Link to="/">
+                        <Link to="/login">
                             <p className="log_in_link link"> Log In</p>
                         </Link>
                     </div>

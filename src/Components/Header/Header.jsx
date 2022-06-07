@@ -48,7 +48,7 @@ function Header() {
     if (logIn) {
         ROLE = JSON.parse(localStorage.getItem("user")).roles[0];
         // setUser(Role);
-        console.log(ROLE);
+        // console.log(ROLE);
     };
     
 

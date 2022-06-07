@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import "./movieCard.css";
-import { Link, useNavigate } from "react-router-dom";
-// import { Skeleton } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function MovieCard({
     id,
@@ -10,20 +9,14 @@ function MovieCard({
     title,
     name,
     size,
-    result,
     media,
 }) {
     const navToTitle = useNavigate();
     const navToSignIn = useNavigate();
 
-    // const base_Url = "https://image.tmdb.org/t/p/w500";
-
-    // ***********************************************ORIGINAL******************************
-
     const base_Url = "https://res.cloudinary.com/zohoott/image/upload/v1652282662/ott/";
-    {console.log("result******",media)}
+    // {console.log("result******",media)}
 
-    // ***********************************************ORIGINAL******************************
 
     const loggedIn = localStorage.getItem("user");
 
@@ -47,7 +40,7 @@ function MovieCard({
                     onClick={navToPage}
                 ></img>
 
-                {console.log("result******",media)}
+                {/* {console.log("result******",media)} */}
 
                 <div className="poster_name ">
                     {title !== undefined ? (

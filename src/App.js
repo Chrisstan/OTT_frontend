@@ -16,10 +16,10 @@ function App() {
     let isLarge = true;
     const userRole = () => {
         if (localStorage.getItem("user")) {
-            console.log(
-                "AAAAAAAAAAAAAAAAAAA",
-                JSON.parse(localStorage.getItem("user")).roles[0]
-            );
+            // console.log(
+            //     "AAAAAAAAAAAAAAAAAAA",
+            //     JSON.parse(localStorage.getItem("user")).roles[0]
+            // );
             let role = JSON.parse(localStorage.getItem("user")).roles[0];
             if (role) {
                 return role;
@@ -79,34 +79,10 @@ function App() {
                                     fetchUrl={requests.fetchTrending}
                                     size={isLarge}
                                 />
-                                {/* <Row
-                                    title="Originals"
-                                    fetchUrl={requests.fetchOriginals}
-                                />
-                                <Row
-                                    title="TopRated"
-                                    fetchUrl={requests.fetchTopRated}
-                                /> */}
                                 <Row
                                     title="Action Movies"
                                     fetchUrl={requests.fetchActionMovies}
                                 />
-                                {/* <Row
-                                    title="Comedies"
-                                    fetchUrl={requests.fetchComedyMovies}
-                                />
-                                <Row
-                                    title="Horror"
-                                    fetchUrl={requests.fetchHorrorMovies}
-                                />
-                                <Row
-                                    title="Romance"
-                                    fetchUrl={requests.fetchRomanceMovies}
-                                />
-                                <Row
-                                    title="Documentaries"
-                                    fetchUrl={requests.fetchDocumentaries}
-                                /> */}
                             </>
                         }
                     />

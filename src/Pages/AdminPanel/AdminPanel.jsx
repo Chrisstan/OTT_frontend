@@ -4,7 +4,6 @@ import "../AdminPanel/adminPanel.css";
 
 import { useState } from "react";
 import UploadService from "../../services/uploadService";
-// import MovieUpload from "../../Components/MovieUpload/MovieUpload";
 
 function AdminPanel(url) {
   const [movieId, setMovieId] = useState("");
@@ -21,7 +20,7 @@ function AdminPanel(url) {
   const [message, setMessage] = useState("");
   const [successful, setSuccessful] = useState(false);
 
-  console.log(url);
+  // console.log(url);
 
   // const required = (value) => {
   //     if (!value) {
@@ -66,11 +65,12 @@ function AdminPanel(url) {
         setSuccessful(false);
       }
     );
-    console.log("message ", message);
+    // console.log("message ", message);
   };
 
 
   function movieUpload (e) {
+    e.preventDefault();
     window.cloudinary.openUploadWidget(
       {
         cloudName: "zohoott",
@@ -138,7 +138,6 @@ function AdminPanel(url) {
               <div className="movieInput">
                 <label htmlFor="movie_name">Movie Name</label>
                 <input type="text"
-                                // className="user_input"
                                 required
                                 value={movieName}
                                 onChange={(x) => setMovieName(x.target.value)} />
@@ -146,7 +145,6 @@ function AdminPanel(url) {
               <div className="movieInput">
                 <label htmlFor="movie_title">Movie Title</label>
                 <input type="text"
-                                // className="user_input"
                                 required
                                 value={movieTitle}
                                 onChange={(x) => setMovieTitle(x.target.value)} />
@@ -154,7 +152,6 @@ function AdminPanel(url) {
               <div className="movieInput">
                 <label htmlFor="movie_release">Release</label>
                 <input type="date"
-                                // className="user_input"
                                 required
                                 value={release}
                                 onChange={(x) => setRelease(x.target.value)}/>
@@ -162,14 +159,12 @@ function AdminPanel(url) {
               <div className="movieInput">
                 <label htmlFor="movie_popularity">Popularity</label>
                 <input type="number" step="0.1"
-                                // className="user_input"
                                 value={popularity}
                                 onChange={(x) => setPopularity(x.target.value)} />
               </div>
               <div className="movieInput">
                 <label htmlFor="movie_budget">Budget</label>
                 <input type="number"
-                                // className="user_input"
                                 required
                                 value={budget}
                                 onChange={(x) => setBudget(x.target.value)} />
@@ -177,14 +172,12 @@ function AdminPanel(url) {
               <div className="movieInput">
                 <label htmlFor="movie_revenue">Revenue</label>
                 <input type="number"
-                                // className="user_input"
                                 value={revenue}
                                 onChange={(x) => setRevenue(x.target.value)} />
               </div>
               <div className="movieInput">
                 <label htmlFor="movie_poster">Poster URL</label>
                 <input type="text"
-                                // className="user_input"
                                 required
                                 value={poster}
                                 onChange={(x) => setPoster(x.target.value)}
@@ -197,7 +190,6 @@ function AdminPanel(url) {
               <div className="movieInput">
                 <label htmlFor="movie_thumbnail">Thumbnail URL</label>
                 <input type="text"
-                                // className="user_input"
                                 required
                                 value={backDrop}
                                 onChange={(x) => setBackDrop(x.target.value)}
@@ -210,7 +202,6 @@ function AdminPanel(url) {
               <div className="movieInput">
                 <label htmlFor="movie_url">Movie URL</label>
                 <input type="text"
-                                // className="user_input"
                                 required
                                 value={media}
                                 onChange={(x) => setMedia(x.target.value)}
@@ -226,7 +217,6 @@ function AdminPanel(url) {
             <div className="movieInput description">
               <label htmlFor="movie_descp">Movie Description</label>
               <textarea  type="text"
-                                // className="user_input desc"
                                 required
                                 value={movieDescp}
                                 onChange={(x) => setMovieDescp(x.target.value)} />
@@ -255,164 +245,7 @@ function AdminPanel(url) {
                 </>
       </>
   );
-  // return (
-  //   <>
-  //     <div className="container">
-  //       <div className="upload_container">
-  //         <div className="upload_title_container">
-  //           <h1 className="upload_title">Upload Content</h1>
-  //         </div>
-  //         <div className="upload_form">
-  //           <div className="field id">
-  //             <label className="input_lable">Movie Id</label>
-  //             <input
-  //               type="number"
-  //               className="user_input"
-  //               required
-  //               value={movieId}
-  //               onChange={(x) => setMovieId(x.target.value)}
-  //               // validations={[required]}
-  //             ></input>
-  //           </div>
-
-  //           <div className="field title">
-  //             <label className="input_lable">Movie Title</label>
-  //             <input
-  //               type="text"
-  //               className="user_input"
-  //               required
-  //               value={movieTitle}
-  //               onChange={(x) => setMovieTitle(x.target.value)}
-  //               // validations={[required, valid_email]}
-  //             ></input>
-  //           </div>
-
-  //           <div className="field name">
-  //             <label className="input_lable">Movie Name</label>
-  //             <input
-  //               type="text"
-  //               className="user_input"
-  //               required
-  //               value={movieName}
-  //               onChange={(x) => setMovieName(x.target.value)}
-  //               // validations={[required, valid_password]}
-  //             ></input>
-  //           </div>
-  //           <div className="field date">
-  //             <label className="input_lable">Release Date</label>
-  //             <input
-  //               type="date"
-  //               className="user_input"
-  //               required
-  //               value={release}
-  //               onChange={(x) => setRelease(x.target.value)}
-  //               // validations={[required, valid_password]}
-  //             ></input>
-  //           </div>
-  //           <div className="field descp">
-  //             <label className="input_lable">Movie Description</label>
-  //             <input
-  //               type="text"
-  //               className="user_input desc"
-  //               required
-  //               value={movieDescp}
-  //               onChange={(x) => setMovieDescp(x.target.value)}
-  //               // validations={[required, valid_password]}
-  //             ></input>
-  //           </div>
-  //           <div className="field popularity">
-  //             <label className="input_lable">Popularity</label>
-  //             <input
-  //               type="number"
-  //               className="user_input"
-  //               value={popularity}
-  //               onChange={(x) => setPopularity(x.target.value)}
-  //               // validations={[required, valid_password]}
-  //             ></input>
-  //           </div>
-  //           <div className="field budget">
-  //             <label className="input_lable">Movie Budget</label>
-  //             <input
-  //               type="number"
-  //               className="user_input"
-  //               required
-  //               value={budget}
-  //               onChange={(x) => setBudget(x.target.value)}
-  //               // validations={[required, valid_password]}
-  //             ></input>
-  //           </div>
-  //           <div className="field revenue">
-  //             <label className="input_lable">Revenue</label>
-  //             <input
-  //               type="number"
-  //               className="user_input"
-  //               value={revenue}
-  //               onChange={(x) => setRevenue(x.target.value)}
-  //               // validations={[required, valid_password]}
-  //             ></input>
-  //           </div>
-  //           <div className="field poster">
-  //             <label className="input_lable">Poster Path</label>
-  //             <input
-  //               type="text"
-  //               className="user_input"
-  //               required
-  //               value={poster == "" ? "" : poster}
-  //               onChange={(x) => setPoster(x.target.value)}
-  //               disabled={true}
-  //               // validations={[required, valid_password]}
-  //             ></input>
-  //             <button id="p" onClick={(e) => movieUpload(e)}>
-  //               Upload
-  //             </button>
-  //           </div>
-  //           <div className="field backdrop">
-  //             <label className="input_lable">BackDrop Path</label>
-  //             <input
-  //               type="text"
-  //               className="user_input"
-  //               required
-  //               value={backDrop == "" ? "" : backDrop}
-  //               onChange={(x) => setBackDrop(x.target.value)}
-  //               disabled={true}
-  //             ></input>
-  //             <button id="bd" onClick={(e) => movieUpload(e)}>
-  //               Upload
-  //             </button>
-  //           </div>
-  //           <div className="field media">
-  //             <label className="input_lable">Media Path</label>
-  //             <input
-  //               type="text"
-  //               className="user_input"
-  //               required
-  //               value={media == "" ? "" : media}
-  //               onChange={(x) => setMedia(x.target.value)}
-  //               disabled={true}
-  //             ></input>
-  //             <button id="mp" onClick={(e) => movieUpload(e)}>
-  //               Upload
-  //             </button>
-  //           </div>
-
-  //           <div className="update_btn">
-  //             <button className="sign_up_btn" onClick={submit}>
-  //               Upload
-  //             </button>
-  //           </div>
-  //         </div>
-  //         {message && (
-  //           <div className="alert_area">
-  //             <div className={successful ? "success_msg" : "failure_msg"}>
-  //               {message ? message : setMessage(" ")}
-  //               {message ? message : setMessage(" ")}
-  //             </div>
-  //           </div>
-  //         )}
-  //       </div>
-  //     </div>
-  //   </>
-  // );
+  
 }
 
 export default AdminPanel;
