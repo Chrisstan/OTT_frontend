@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { findDOMNode } from "react-dom";
 import ReactPlayer from "react-player";
 import React from "react";
 import "./videoPlayer.css";
@@ -8,7 +7,7 @@ function VideoPlayer() {
     const { media } = useParams();
     const base_Url =
         "https://res.cloudinary.com/zohoott/video/upload/v1652331550/ott/";
-    console.log("^^^^^", window.location.pathname);
+    // console.log("^^^^^", window.location.pathname);
 
  
 
@@ -21,6 +20,11 @@ function VideoPlayer() {
                     height="100%"
                     controls
                     playing={true}
+                    config={{ file: {
+                        attributes: {
+                        controlsList: 'nodownload'
+                        }
+                        }}}
                 />
             </div>
         </>

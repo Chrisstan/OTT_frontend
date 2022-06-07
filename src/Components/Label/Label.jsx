@@ -2,7 +2,6 @@ import "./label.css";
 import { React, useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../../axios";
-import { Link } from "react-router-dom";
 import requests from "../request";
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -16,14 +15,14 @@ function Label() {
     useEffect(() => {
         async function fetchData() {
             const request = await axios.get(requests.fetchTrending);
-            console.log("request", request);
-            console.log("sss", request.data.movies);
+            // console.log("request", request);
+            // console.log("sss", request.data.movies);
             setMovie(
                 request.data.movies[
                     Math.floor(Math.random() * request.data.movies.length)
                 ]
             );
-            console.log(Math.floor(Math.random() * request.data.movies.length));
+            // console.log(Math.floor(Math.random() * request.data.movies.length));
 
             return request;
         }
@@ -36,9 +35,9 @@ function Label() {
         return str?.length > n ? str.substr(0, n - 1) + "..." : str;
     }
 
-    {
-        console.log("##################", movie?.backdrop_path);
-    }
+    // {
+    //     console.log("##################", movie?.backdrop_path);
+    // }
 
     const loggedIn = localStorage.getItem("user");
 

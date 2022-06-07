@@ -18,10 +18,10 @@ function LogIn() {
             (res) => {
                 setLogin(true);
                 // localStorage.setItem("logIn", "Logged In");
-                console.log(
-                    "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
-                    res
-                );
+                // console.log(
+                //     "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+                //     res
+                // );
 
                 navigate("/");
                 // window.location.reload();

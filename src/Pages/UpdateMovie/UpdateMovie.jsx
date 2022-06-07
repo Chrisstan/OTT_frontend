@@ -1,23 +1,15 @@
 import { React, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { isEmail } from "validator";
 
 import "../UpdateMovie/updateMovie.css";
 
 import { useState } from "react";
 
-// import { TagPicker } from "rsuite";
 import axios from "../../axios";
-import UploadService from "../../services/uploadService";
-import movieCrudService, {
-  get_movie_by_id,
-} from "../../services/movieCrudService";
-import Select from "react-select";
-import { optionLength } from "./data";
+import movieCrudService from "../../services/movieCrudService";
 
 
 function UpdateMovie() {
-  const [movie, setMovie] = useState("");
   const [movieId, setMovieId] = useState("");
   const [movieTitle, setMovieTitle] = useState("");
   const [movieName, setMovieName] = useState("");
@@ -33,7 +25,7 @@ function UpdateMovie() {
   const [successful, setSuccessful] = useState(false);
   const [datas, setDatas] = useState([]);
   const { id } = useParams();
-  console.log("!!!!!!!1", datas);
+  // console.log("!!!!!!!1",datas);
   const data = async () => {
     const res = await axios
       .get(`/movies/get_movie_by_id/${id}`)
@@ -49,7 +41,7 @@ function UpdateMovie() {
         setPoster(response.data.posterPath);
         setBackDrop(response.data.backdrop_path);
         setMedia(response.data.media_path);
-        console.log("👉👉 >>", response.data);
+        // console.log("👉👉 >>", response.data);
       })
       .catch((error) => {
         // console.log(error.res);
@@ -62,16 +54,16 @@ function UpdateMovie() {
 
   const navToListPage = useNavigate();
 
-  const required = (value) => {
-    if (!value) {
-      setMessage("Plz Fill Out all the required Feilds");
-      return (
-        <div className="failure_msg">
-          <sup>*</sup>This field is required!
-        </div>
-      );
-    }
-  };
+  // const required = (value) => {
+  //   if (!value) {
+  //     setMessage("Plz Fill Out all the required Feilds");
+  //     return (
+  //       <div className="failure_msg">
+  //         <sup>*</sup>This field is required!
+  //       </div>
+  //     );
+  //   }
+  // };
 
   const update_genre = (e) => {
     e.preventDefault();
@@ -114,7 +106,7 @@ function UpdateMovie() {
           setSuccessful(false);
         }
       );
-    console.log("message ", message);
+    // console.log("message ", message);
   };
 
 
@@ -123,7 +115,7 @@ function UpdateMovie() {
   const onchangeInput = (e) => {
     const val = e.split(',').map((a) => { return (parseInt(a)) });
     setDatas(val)
-    console.log("@@@", datas);
+    // console.log("@@@",datas);
   };
   // setDatas()
 

@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../MovieList/movieList.css";
 
 import axios from "../../axios";
@@ -10,7 +10,6 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
@@ -80,20 +79,18 @@ function MovieList() {
     };
 
     const delete_data = async(id) => {
-        console.log("AAAAAAAAAAAAAAAAAAAAAAA",id)
+        // console.log("AAAAAAAAAAAAAAAAAAAAAAA",id)
         await movieCrudService.delete_movie(id);
         data()
        
     }
-
-    const navToUpdatePage = useNavigate();
 
     useEffect(() => {
         data();
         
     }, []);
 
-    console.log("💩💩💩💩💩💩💩", movies);
+    // console.log("💩💩💩💩💩💩💩", movies);
 
     return (
         <div className="movie_table">
