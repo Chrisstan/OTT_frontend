@@ -16,7 +16,7 @@ import TableRow from "@mui/material/TableRow";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditIcon from "@mui/icons-material/Edit";
 import movieCrudService from "../../services/movieCrudService";
-import { DataGrid } from "@mui/x-data-grid";
+// import { DataGrid } from "@mui/x-data-grid";
 
 function MovieList() {
     const [movies, setMovies] = useState([]);
@@ -85,30 +85,24 @@ function MovieList() {
 
     useEffect(() => {
         data();
-
     }, []);
 
-
     const delete_data = async (id) => {
-        console.log("AAAAAAAAAAAAAAAAAAAAAAA", id)
+        console.log("AAAAAAAAAAAAAAAAAAAAAAA", id);
         await movieCrudService.delete_movie(id);
-        data()
-
-    }
+        data();
+    };
 
     const navToUpdatePage = useNavigate();
-
 
     console.log("💩💩💩💩💩💩💩", movies);
 
     return (
 
         <div className="movie_table">
-            <DataGrid
-                rows={movies}
-                columns={columns}
-            />
-
+            {/* <DataGrid columns={columns}
+            rows= {movies}
+            /> */}
         </div>
     );
 }
