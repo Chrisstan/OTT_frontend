@@ -1,9 +1,9 @@
-import React from "react";
+import { React, useState } from "react";
 
 import "../AdminPanel/adminPanel.css";
 
-import { useState } from "react";
 import UploadService from "../../services/uploadService";
+import BackupIcon from '@mui/icons-material/Backup';
 
 function AdminPanel(url) {
   const [movieId, setMovieId] = useState("");
@@ -161,23 +161,24 @@ function AdminPanel(url) {
                   onChange={(x) => setMovieTitle(x.target.value)} />
               </div>
               <div className="movieInput">
-                <label htmlFor="movie_release">Release</label>
+                <label htmlFor="movie_release">Release Date</label>
                 <input type="date"
                   required
                   value={release}
                   onChange={(x) => setRelease(x.target.value)} />
               </div>
               <div className="movieInput">
-                <label htmlFor="movie_popularity">Popularity</label>
+                <label htmlFor="movie_popularity">Movie Popularity</label>
                 <input type="number" step="0.1"
                   value={popularity}
                   onChange={(x) => setPopularity(x.target.value)} />
               </div>
               <div className="movieInput">
-                <label htmlFor="movie_budget">Budget</label>
+                <label htmlFor="movie_budget">Add Budget</label>
                 <input type="number"
                   required
-                  value={budget}
+                  placeholder="0"
+                  // value={budget}
                   onChange={(x) => setBudget(x.target.value)} />
               </div>
               <div className="movieInput">
@@ -188,62 +189,60 @@ function AdminPanel(url) {
               </div>
               <div className="movieInput">
                 <label htmlFor="movie_poster">Poster URL</label>
-                <input type="text"
-                  required
-                  value={poster}
-                  onChange={(x) => setPoster(x.target.value)}
-                  disabled={true} />
-
-                <button id="p" onClick={(e) => movieUpload(e)}>
-                  Upload
-                </button>
+                <div className="urlContainer">
+                  <input type="text"
+                    required
+                    value={poster}
+                    onChange={(x) => setPoster(x.target.value)}
+                    disabled={true} />
+                  <div id="p" className="Upload_btn" onClick={(e) => movieUpload(e)}>
+                    <BackupIcon />
+                  </div>
+                </div>
               </div>
               <div className="movieInput">
                 <label htmlFor="movie_thumbnail">Thumbnail URL</label>
-                <input type="text"
-                  required
-                  value={backDrop}
-                  onChange={(x) => setBackDrop(x.target.value)}
-                  disabled={true} />
+                <div className="urlContainer">
+                  <input type="text"
+                    required
+                    value={backDrop}
+                    onChange={(x) => setBackDrop(x.target.value)}
+                    disabled={true} />
 
-                <button id="bd" onClick={(e) => movieUpload(e)}>
-                  Upload
-                </button>
+                  <div id="bd" className="Upload_btn" onClick={(e) => movieUpload(e)}>
+                    <BackupIcon />
+                  </div>
+                </div>
               </div>
               <div className="movieInput">
                 <label htmlFor="movie_url">Movie URL</label>
-                <input type="text"
-                  required
-                  value={media}
-                  onChange={(x) => setMedia(x.target.value)}
-                  disabled={true} />
-
-                <button id="mp" className="Upload_btn" onClick={(e) => movieUpload(e)}>
-                  Upload
-                </button>
-              </div>
-                <div className="movieInput description">
-                  <label htmlFor="movie_descp">Movie Description</label>
-                  <textarea type="text"
+                <div className="urlContainer">
+                  <input type="text"
                     required
-                    value={movieDescp}
-                    onChange={(x) => setMovieDescp(x.target.value)} />
+                    value={media}
+                    onChange={(x) => setMedia(x.target.value)}
+                    disabled={true} />
+
+                  <div id="mp" className="Upload_btn" onClick={(e) => movieUpload(e)}>
+                    <BackupIcon />
+                  </div>
                 </div>
-                <div className="movieInput description">
-              <label htmlFor="movie_descp">
-                Movie Genres
-              </label>
-              <input type="text" onChange={(e) => onchangeInput(e.target.value)} />
-            </div>
+              </div>
+              <div className="movieInput description">
+                <label htmlFor="movie_descp">Movie Description</label>
+                <textarea type="text"
+                  required
+                  value={movieDescp}
+                  onChange={(x) => setMovieDescp(x.target.value)} />
+              </div>
+              <div className="movieInput genreInput">
+                <label htmlFor="movie_descp">
+                  Add Genres
+                </label>
+                <input type="text" onChange={(e) => onchangeInput(e.target.value)} />
+              </div>
             </form>
           </div>
-          <div className="movieInput description">
-              <label htmlFor="movie_descp">
-                Movie Genres
-              </label>
-              <input type="text" onChange={(e) => onchangeInput(e.target.value)} />
-            </div>
-
           <div className="update_btn">
             <button className="sign_up_btn" onClick={submit}>
               Upload

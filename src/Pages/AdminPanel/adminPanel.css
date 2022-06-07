@@ -11,9 +11,7 @@
 }
 
 .formTitle {
-    display: flex;
-    justify-content: center;
-    color: #fff;
+    color: rgb(228, 22, 22);
 }
 
 .updateForm {
@@ -29,9 +27,21 @@
     margin-top: 40px;
     margin-right: 80px;
 }
+.urlField{
+    display: flex;
+    flex-direction: row;
+}
+
+.urlContainer{
+    display: flex;
+    flex-direction: row;
+}
+.urlContainer>input{
+    width: 100%;
+}
 
 
-.description>textarea {
+.description>textarea, .genreInput>textarea {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap-reverse;
@@ -54,7 +64,7 @@
     color: rgb(165, 164, 164);
 }
 
-.movieInput>input {
+.movieInput>input, .urlContainer>input {
     height: 20px;
     padding: 10px;
     color: #fff;
@@ -63,7 +73,14 @@
     background: none;
 }
 
-
+.Upload_btn{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+    color: grey;
+    background-color: none;
+}
 
 .update_btn {
     display: flex;
