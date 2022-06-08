@@ -46,7 +46,7 @@ function MovieTitle() {
                     <div className="boxGradient">
                         <div className="movieDetails">
                                 <h1 className="movieTitle">
-                                    {movieData?.movie_name}
+                                    {movieData?.movie_title}
                                 </h1>
 
                             <div className="movieinfo">

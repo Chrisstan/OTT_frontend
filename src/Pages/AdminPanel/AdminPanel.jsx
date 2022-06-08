@@ -244,7 +244,7 @@ function AdminPanel(url) {
             </form>
           </div>
           <div className="update_btn">
-            <button className="sign_up_btn" onClick={submit}>
+          <button className="sign_up_btn" onClick={(e) => { submit(e); add_genre(e) }}>
               Upload
             </button>
           </div>

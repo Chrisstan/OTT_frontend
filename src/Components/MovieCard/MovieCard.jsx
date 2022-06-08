@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import "./movieCard.css";
 import { useNavigate } from "react-router-dom";
 
@@ -43,10 +43,10 @@ function MovieCard({
                 {/* {console.log("result******",media)} */}
 
                 <div className="poster_name ">
-                    {title !== undefined ? (
-                        <p className="poster_title">{title}</p>
-                    ) : (
+                    {name !== undefined ? (
                         <p className="poster_title">{name}</p>
+                    ) : (
+                        <p className="poster_title">{title}</p>
                     )}
                 </div>
             </div>
